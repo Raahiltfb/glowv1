@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&family=Dongle:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@layer utilities {
+  .font-dongle {
+    font-family: 'Dongle', sans-serif;
+  }
+  .font-commissioner {
+    font-family: 'Commissioner', sans-serif;
+  }
+  .font-serif-luxury {
+    font-family: 'Dongle', sans-serif;
+  }
+  .font-cinzel {
+    font-family: 'Commissioner', sans-serif;
+  }
+  .gold-title {
+    color: #8C6D38;
+    font-family: 'Dongle', sans-serif;
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #B89762 0%, #8C6D38 40%, #D4AF37 70%, #9E7D47 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gold-btn {
+    background: linear-gradient(135deg, #E5C384 0%, #C5A880 50%, #B89762 100%);
+    color: #000000;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 18px rgba(197, 168, 128, 0.3);
+    transition: all 0.3s ease;
+  }
+  .gold-btn:hover {
+    box-shadow: 0 6px 24px rgba(197, 168, 128, 0.5);
+    transform: translateY(-1px);
+  }
+  .reference-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(197, 168, 128, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(197, 168, 128, 0.08);
+    transition: all 0.3s ease;
+  }
+  .reference-card:hover {
+    border-color: rgba(197, 168, 128, 0.8);
+    box-shadow: 0 8px 30px rgba(197, 168, 128, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Commissioner', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAF8F5;
+  color: #222222;
+  overflow-x: hidden;
+}
