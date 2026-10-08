@@ -30,11 +30,7 @@ export default function Navbar({
 
   const sectionTabs = [
     { id: 'hero', label: 'Home' },
-    { id: 'about-glow', label: 'About & Team' },
     { id: 'treatments', label: 'Treatments' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'testimonials', label: 'Testimonials' },
-    { id: 'products', label: 'Products' },
     { id: 'contact', label: 'Contact' },
   ];
 

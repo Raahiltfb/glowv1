@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Phone, MessageCircle, MapPin } from 'lucide-react';
-import { lymphaticTreatments } from './TreatmentsSection';
-import { menuItems } from './BoutiqueMenuSection';
+import { servicesList, facialSubServices } from './TreatmentsSection';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -11,7 +10,7 @@ interface BookingModalProps {
 
 export default function BookingModal({
   isOpen,
-  initialTreatment = 'Full Body Lymphatic Drainage',
+  initialTreatment = 'Facial Lymphatic Drainage',
   onClose,
 }: BookingModalProps) {
   const [selectedTreatment, setSelectedTreatment] = useState(initialTreatment);
@@ -28,10 +27,8 @@ export default function BookingModal({
   if (!isOpen) return null;
 
   const allTreatmentNames = [
-    ...lymphaticTreatments.map((t) => t.title),
-    ...menuItems.map((m) => m.title),
-    'Hand-Carved Gua Sha Stone',
-    '24K Gold Hydrogel Facial Mask',
+    ...servicesList.map((s) => s.title),
+    ...facialSubServices.map((f) => f.name),
     'Custom Combination Session',
   ];
 

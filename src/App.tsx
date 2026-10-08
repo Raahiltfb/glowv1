@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
 import AboutPage from './components/AboutPage';
 import TreatmentsSection from './components/TreatmentsSection';
 import BoutiqueMenuSection from './components/BoutiqueMenuSection';
-import GallerySection from './components/GallerySection';
-import TestimonialsSection from './components/TestimonialsSection';
-import ProductsSection from './components/ProductsSection';
 import FooterBar from './components/FooterBar';
+import BookingModal from './components/BookingModal';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'about'>('home');
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedTreatment, setSelectedTreatment] = useState<string | undefined>();
 
   const handleNavigateHome = () => {
     setCurrentPage('home');
@@ -34,11 +33,13 @@ export default function App() {
   };
 
   const handleOpenBooking = () => {
-    handleNavigateSection('contact');
+    setSelectedTreatment(undefined);
+    setIsBookingOpen(true);
   };
 
-  const handleSelectTreatment = (_treatmentTitle: string) => {
-    handleNavigateSection('contact');
+  const handleSelectTreatment = (treatmentTitle: string) => {
+    setSelectedTreatment(treatmentTitle);
+    setIsBookingOpen(true);
   };
 
   return (
@@ -56,27 +57,17 @@ export default function App() {
       <main className="flex-1">
         {currentPage === 'home' && (
           <>
-            {/* 1. Hero Tab / Section */}
+            {/* 1. Hero Section */}
             <HeroSection
               onOpenBooking={handleOpenBooking}
               onExploreTreatments={() => handleNavigateSection('treatments')}
             />
 
-            {/* 2. About Glow Flow, Founder & Team Tab / Section */}
-            <AboutSection onOpenBooking={handleOpenBooking} />
-
-            {/* 3. Treatments Tab / Section (All 7 Lymphatic + 5 Boutique Menu Rituals) */}
+            {/* 2. 10 Lymphatic Drainage Services */}
             <TreatmentsSection onSelectTreatment={handleSelectTreatment} />
+
+            {/* 3. Also on the menu (Face Yoga, Acupressure, Kansa, Gua Sha, Reflexology) */}
             <BoutiqueMenuSection onSelectMenu={handleSelectTreatment} />
-
-            {/* 4. Gallery Tab / Section (Sanctuary photos & procedure videos) */}
-            <GallerySection />
-
-            {/* 5. Testimonials Tab / Section (Client feedback & celebrity reviews) */}
-            <TestimonialsSection />
-
-            {/* 6. Products Tab / Section (Gua Sha Stone & Gold Facial Mask) */}
-            <ProductsSection />
           </>
         )}
 
@@ -85,8 +76,15 @@ export default function App() {
         )}
       </main>
 
-      {/* 7. Contact Section & Footer Bar */}
+      {/* Footer Bar */}
       <FooterBar />
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isBookingOpen}
+        initialTreatment={selectedTreatment}
+        onClose={() => setIsBookingOpen(false)}
+      />
     </div>
   );
 }
