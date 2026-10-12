@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Award, MapPin, Phone, Mail } from 'lucide-react';
+import { ShieldCheck, Award, MapPin, Phone, Mail } from 'lucide-react';
 
 interface AboutPageProps {
   onOpenBooking: () => void;
@@ -78,11 +78,8 @@ export default function AboutPage({ onOpenBooking }: AboutPageProps) {
               </div>
 
               <div className="text-white">
-                <div className="text-[11px] uppercase tracking-[0.3em] text-[#E8D58C] font-semibold mb-1">
-                  LYMPHATIC DRAINAGE + WELLNESS
-                </div>
                 <h4 className="font-serif-luxury text-3xl sm:text-4xl leading-tight font-normal text-white">
-                  GlowFlow Clinic
+                  Glow Flow Studio
                 </h4>
                 <p className="text-xs text-[#D8C9B4] font-light mt-2 max-w-xs leading-relaxed">
                   Bandra West, Mumbai &bull; Non-invasive natural facelift and systemic fluid therapy
@@ -189,7 +186,6 @@ export default function AboutPage({ onOpenBooking }: AboutPageProps) {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#E8D58C] bg-[#0A2018] px-3 py-1 rounded-full border border-[#D4AF37]/30">
                     {item.badge}
                   </span>
-                  <Sparkles className="w-4 h-4 text-[#E8D58C] group-hover:rotate-12 transition-transform" />
                 </div>
 
                 <div className="text-xs text-[#D8C9B4]/80 uppercase tracking-wider mb-1">

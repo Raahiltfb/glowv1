@@ -82,9 +82,18 @@ export const menuItems: MenuItem[] = [
 
 export default function BoutiqueMenuSection({ onSelectMenu }: BoutiqueMenuSectionProps) {
   return (
-    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner">
+    <section className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner overflow-hidden">
+      {/* Botanical Leaves Background Accent */}
+      <div className="absolute top-0 right-0 w-64 sm:w-80 pointer-events-none opacity-30 select-none z-0">
+        <img
+          src="/botanical-leaves-right.png"
+          alt=""
+          className="w-full h-auto object-contain transform translate-x-12 -translate-y-8"
+        />
+      </div>
+
       {/* Title */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 relative z-10">
         <div className="text-xs uppercase tracking-[0.25em] text-[#E8D58C] font-semibold mb-2">
           Specialty Studio Disciplines
         </div>
@@ -94,7 +103,7 @@ export default function BoutiqueMenuSection({ onSelectMenu }: BoutiqueMenuSectio
       </div>
 
       {/* Grid of 5 Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
         {menuItems.map((item, idx) => (
           <div
             key={idx}

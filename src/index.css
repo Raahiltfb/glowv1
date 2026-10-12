@@ -54,30 +54,32 @@
     transform: translateY(-1px);
   }
   .emerald-card {
-    background: rgba(20, 56, 42, 0.85);
-    backdrop-filter: blur(12px);
+    background: #14382A;
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(232, 213, 140, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(232, 213, 140, 0.08);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   .emerald-card:hover {
     border-color: rgba(232, 213, 140, 0.7);
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.15);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
   }
   .reference-card {
-    background: rgba(20, 56, 42, 0.85);
-    backdrop-filter: blur(12px);
+    background: #14382A;
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   .reference-card:hover {
     border-color: rgba(232, 213, 140, 0.7);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.15);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
   }
 }
 

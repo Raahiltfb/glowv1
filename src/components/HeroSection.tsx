@@ -22,14 +22,11 @@ export default function HeroSection({ onOpenBooking, onExploreTreatments }: Hero
 
       {/* Hero Text Content Layer */}
       <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10 flex flex-col items-start text-left font-commissioner">
-        <div className="max-w-2xl pt-6 pb-10">
-          
-          {/* Top Tagline from PDF */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#14382A]/80 border border-[#D4AF37]/35 mb-4 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#E8D58C] animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-[#E8D58C]">
-              GlowFlow Clinic &bull; Lymphatic Drainage + Wellness
-            </span>
+        <div className="max-w-3xl pt-6 pb-10">
+
+          {/* Top Tagline */}
+          <div className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-[#E8D58C] mb-4">
+            Full Body Lymphatic Artistry
           </div>
 
           {/* Headline inspired by user design & PDF */}
@@ -40,22 +37,14 @@ export default function HeroSection({ onOpenBooking, onExploreTreatments }: Hero
 
           {/* Sub-headline */}
           <div className="text-base sm:text-lg md:text-xl font-light text-[#E8D58C] tracking-wide mb-4">
-            Release + Restore + Radiate &bull; Sculpting & Drainage Sanctuary
+            Release + Restore + Radiate
           </div>
 
           <div className="w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-5" />
 
-          {/* Quick Feature Badges from PDF */}
-          <div className="flex flex-wrap gap-2 mb-6 text-xs text-[#EADBC8]/90">
-            <span className="px-3 py-1 rounded-full bg-[#14382A]/90 border border-[#D4AF37]/25">Natural Facelift</span>
-            <span className="px-3 py-1 rounded-full bg-[#14382A]/90 border border-[#D4AF37]/25">Customized Drainage</span>
-            <span className="px-3 py-1 rounded-full bg-[#14382A]/90 border border-[#D4AF37]/25">Full Body Protocol</span>
-            <span className="px-3 py-1 rounded-full bg-[#14382A]/90 border border-[#D4AF37]/25">Sculpting Tools</span>
-          </div>
-
-          {/* Details Bar with PDF Address */}
-          <p className="text-xs sm:text-sm text-[#D8C9B4] font-light tracking-wider leading-relaxed mb-8">
-            New Clifton RHS, Bandra West, Mumbai &bull; Private Appointments: +91 81041 01177 / +91 99305 09906
+          {/* Details Bar with PDF Address - Single Line */}
+          <p className="text-[11px] sm:text-xs md:text-sm text-[#D8C9B4] font-light tracking-wide whitespace-nowrap mb-8">
+            New Clifton RHS, Bandra West, Mumbai &bull; 91 81041 01177 / 91 99305 09906
           </p>
 
           {/* CTA Buttons */}
@@ -72,7 +61,7 @@ export default function HeroSection({ onOpenBooking, onExploreTreatments }: Hero
               onClick={onExploreTreatments}
               className="gold-btn-outline text-xs sm:text-sm tracking-widest uppercase font-semibold px-7 py-4 rounded-full cursor-pointer"
             >
-              Explore Price List
+              Explore Treatments
             </button>
           </div>
         </div>

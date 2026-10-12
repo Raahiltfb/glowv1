@@ -27,7 +27,7 @@ export default function BookingModal({
   if (!isOpen) return null;
 
   const allTreatmentNames = [
-    ...offeringsList.map((s) => `${s.title} (${s.duration} ${s.durationUnit} - ${s.price})`),
+    ...offeringsList.map((s) => `${s.title} (${s.duration} ${s.durationUnit})`),
     'Face Yoga Consultation',
     'Custom Combination Session',
   ];

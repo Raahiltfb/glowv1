@@ -6,33 +6,29 @@ const treatmentMenu = [
     id: 1,
     name: "Clinical Lymphatic Drainage",
     duration: "60 MIN",
-    price: "₹5,500",
     description: "Targeted gentle pumping technique designed to clear metabolic fluid buildup, reduce facial puffiness, and stimulate deep lymphatic circulation across the neck and face.",
-    bookingQuery: "Clinical Lymphatic Drainage (60 MIN - ₹5,500)"
+    bookingQuery: "Clinical Lymphatic Drainage (60 MIN)"
   },
   {
     id: 2,
     name: "Facial Sculpting & Gua Sha Protocol",
     duration: "75 MIN",
-    price: "₹7,200",
     description: "An intensive manual sculpting ritual utilizing hand-carved medicinal stone tools to release facial fascia tension, chisel jawline definition, and enhance natural cheek volume.",
-    bookingQuery: "Facial Sculpting & Gua Sha Protocol (75 MIN - ₹7,200)"
+    bookingQuery: "Facial Sculpting & Gua Sha Protocol (75 MIN)"
   },
   {
     id: 3,
     name: "Full Body Metabolic Detox Ritual",
     duration: "90 MIN",
-    price: "₹9,800",
     description: "Comprehensive body lymphatic stimulation focusing on key node pathways to relieve systemic fluid retention, boost metabolic circulation, and leave skin deeply energized.",
-    bookingQuery: "Full Body Metabolic Detox Ritual (90 MIN - ₹9,800)"
+    bookingQuery: "Full Body Metabolic Detox Ritual (90 MIN)"
   },
   {
     id: 4,
     name: "Signature Glow Flow Combination",
     duration: "105 MIN",
-    price: "₹12,500",
     description: "Our premier clinical ritual combining full body lymphatic drainage with intensive facial sculpting, cold therapy, and custom herbal oil infusion for maximum contouring.",
-    bookingQuery: "Signature Glow Flow Combination (105 MIN - ₹12,500)"
+    bookingQuery: "Signature Glow Flow Combination (105 MIN)"
   }
 ];
 
@@ -131,15 +127,12 @@ export default function LymphaticSection() {
                 className="border-b border-[#2A2621] cursor-pointer group transition-colors"
                 onClick={() => toggleExpand(item.id)}
               >
-                <div className="py-6 px-4 grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+                <div className="py-6 px-4 grid grid-cols-1 md:grid-cols-3 items-center gap-4">
                   <div className="font-serif text-xl text-white group-hover:text-[#C5A880] transition-colors">
                     {item.name}
                   </div>
                   <div className="font-mono text-xs text-white/60 tracking-wider">
                     {item.duration}
-                  </div>
-                  <div className="font-mono text-base text-[#C5A880] font-bold">
-                    {item.price}
                   </div>
                   <div className="font-mono text-lg text-[#C5A880] text-right">
                     {isExpanded ? '−' : '+'}

@@ -38,9 +38,9 @@ export default function Navbar({
     <header className="fixed top-3 left-0 right-0 z-50 px-4 md:px-8">
       {/* Floating Glassmorphism Pill Container */}
       <div
-        className={`max-w-7xl mx-auto rounded-full transition-all duration-500 px-5 sm:px-7 py-2 flex items-center justify-between border ${isScrolled
-          ? 'bg-[#0B221A]/90 backdrop-blur-xl border-[#D4AF37]/40 shadow-[0_10px_35px_rgba(0,0,0,0.6)]'
-          : 'bg-[#0B221A]/75 backdrop-blur-md border-[#D4AF37]/25 shadow-lg hover:bg-[#0B221A]/90'
+        className={`max-w-7xl mx-auto rounded-full transition-colors duration-300 transform-gpu px-5 sm:px-7 py-2 flex items-center justify-between border ${isScrolled
+          ? 'bg-[#0B221A]/95 backdrop-blur-xl border-[#D4AF37]/40 shadow-[0_10px_35px_rgba(0,0,0,0.6)]'
+          : 'bg-[#0B221A]/85 backdrop-blur-md border-[#D4AF37]/25 shadow-lg hover:bg-[#0B221A]/95'
           }`}
       >
         {/* Brand Logo */}

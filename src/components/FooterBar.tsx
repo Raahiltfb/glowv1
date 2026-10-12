@@ -156,11 +156,11 @@ export default function FooterBar() {
           <div className="flex items-center gap-3">
             <img src="/glowflow.png" alt="Glow Flow Logo" className="h-9 w-auto object-contain" />
             <span className="text-xs tracking-[0.25em] text-[#E8D58C] uppercase font-semibold">
-              GLOWFLOW CLINIC &bull; LYMPHATIC DRAINAGE + WELLNESS
+              GLOW FLOW STUDIO &bull; RELEASE. RESTORE. RADIATE.
             </span>
           </div>
           <div className="text-[11px] text-[#D8C9B4]/70">
-            &copy; {new Date().getFullYear()} GLOWFLOW CLINIC. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} GLOW FLOW STUDIO. ALL RIGHTS RESERVED.
           </div>
         </div>
 
