@@ -45,10 +45,25 @@ export const clinicDisciplines = [
 
 export default function AboutPage({ onOpenBooking }: AboutPageProps) {
   return (
-    <div className="pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-screen bg-[#0D281E] text-[#F5E8D0] font-commissioner">
+    <div className="relative pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-screen bg-[#0D281E] text-[#F5E8D0] font-commissioner overflow-hidden">
+      {/* Botanical Leaves Background Layer */}
+      <div className="absolute top-10 right-0 w-72 sm:w-96 pointer-events-none opacity-40 select-none z-0">
+        <img
+          src="/botanical-leaves-right.png"
+          alt=""
+          className="w-full h-auto object-contain transform translate-x-12 -translate-y-8"
+        />
+      </div>
+      <div className="absolute top-1/2 left-0 w-72 sm:w-80 pointer-events-none opacity-30 select-none z-0">
+        <img
+          src="/botanical-leaves-left.png"
+          alt=""
+          className="w-full h-auto object-contain transform -translate-x-12"
+        />
+      </div>
       
       {/* SECTION 1: ABOUT GLOW FLOW & FOUNDER PHILOSOPHY */}
-      <div className="mb-24">
+      <div className="mb-24 relative z-10">
         <div className="flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#E8D58C] mb-3">
           <span className="w-8 h-[1px] bg-[#D4AF37]/50" />
           <span>Clinic Sanctuary & Philosophy</span>

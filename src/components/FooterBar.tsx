@@ -13,8 +13,16 @@ export default function FooterBar() {
   };
 
   return (
-    <footer id="contact" className="bg-[#091F15] text-[#F5E8D0] pt-20 pb-12 px-6 border-t border-[#D4AF37]/25 font-commissioner">
-      <div className="max-w-7xl mx-auto">
+    <footer id="contact" className="relative bg-[#091F15] text-[#F5E8D0] pt-20 pb-12 px-6 border-t border-[#D4AF37]/25 font-commissioner overflow-hidden">
+      {/* Botanical Leaves Background Accent */}
+      <div className="absolute top-0 left-0 w-64 sm:w-80 pointer-events-none opacity-25 select-none z-0">
+        <img
+          src="/botanical-leaves-left.png"
+          alt=""
+          className="w-full h-auto object-contain transform -translate-x-12 -translate-y-8"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Contact Section Title */}
         <div className="text-center mb-14">
