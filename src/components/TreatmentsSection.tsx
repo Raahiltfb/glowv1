@@ -1,327 +1,305 @@
 import { useState } from 'react';
-import type { ReactNode } from 'react';
-import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowRight, Sparkles, Clock, CheckCircle } from 'lucide-react';
 
-export interface FacialSubService {
-  name: string;
-  tagline: string;
-  description: string;
-}
-
-export interface ServiceItem {
+export interface TreatmentService {
   id: number;
   title: string;
-  badge?: string;
+  duration: string;
+  durationUnit: string;
+  price: string;
+  category: 'facial' | 'body' | 'fullbody';
+  tagline?: string;
   description: string;
-  subServices?: FacialSubService[];
-  iconSvg: ReactNode;
+  features?: string[];
 }
 
 interface TreatmentsSectionProps {
   onSelectTreatment: (treatmentName: string) => void;
 }
 
-export const facialSubServices: FacialSubService[] = [
-  { name: "Instant Facial", tagline: "Quick Radiance", description: "Express puffiness relief & instant glowing skin hydration" },
-  { name: "Classic Facial", tagline: "Core Sculpting", description: "Deep manual lymphatic drainage & facial tissue sculpting" },
-  { name: "Eye & Face Lymphatic", tagline: "Orbital Focus", description: "Targeted eye de-bloating & full facial fluid clearance" },
-  { name: "Luxe Facial", tagline: "Restorative Ritual", description: "Premium restorative ritual with deep fascia contouring" },
-  { name: "Microcurrent Sculpting", tagline: "Bio-Electric Lift", description: "Microcurrent muscle toning & fluid elevation" },
-  { name: "Elite Facial", tagline: "Master Protocol", description: "Ultimate clinical facial sculpting & multi-layer detox" },
-  { name: "RF (Radio Frequency) Facial", tagline: "Thermal Firming", description: "Radio frequency collagen stimulation & firming drainage" },
-];
-
-export const servicesList: ServiceItem[] = [
+export const offeringsList: TreatmentService[] = [
   {
     id: 1,
-    title: "Facial Lymphatic Drainage",
-    badge: "7 Facial Rituals",
-    description: "Precision facial fascia release, jawline sculpting, and systemic orbital de-bloating.",
-    subServices: facialSubServices,
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M58 14C48 14 36 20 32 30C30 35 28 40 24 44C22 46 24 48 28 49C26 51 27 53 29 54C27 56 29 58 33 59C31 63 35 67 41 67C49 67 57 64 63 54" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M60 46C64 44 65 52 61 54" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M41 67C43 74 45 81 47 88" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M63 54C65 67 67 77 71 88" strokeWidth="1.6" strokeLinecap="round" />
-        <circle cx="48" cy="64" r="2" fill="currentColor" />
-        <circle cx="58" cy="57" r="2" fill="currentColor" />
-      </svg>
-    ),
+    title: "Instant Facelift",
+    duration: "30",
+    durationUnit: "min",
+    price: "₹1,500",
+    category: "facial",
+    tagline: "Quick Radiance & Contouring",
+    description: "30-minute session combining lymphatic drainage, contouring tools, and hydration to refresh, sculpt, and revitalize your natural glow.",
+    features: ["Lymphatic Drainage", "Contouring Tools", "Instant Hydration Glow"]
   },
   {
     id: 2,
-    title: "Head Lymphatic Drainage",
-    description: "Cranial fluid mapping, scalp tension release & deep sensory relaxation.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <circle cx="50" cy="40" r="24" strokeWidth="1.8" />
-        <path d="M30 40C30 25 70 25 70 40" strokeWidth="1.4" strokeDasharray="3 3" />
-        <path d="M50 16V26M35 22L41 28M65 22L59 28" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M42 64C44 72 45 80 47 88M58 64C56 72 55 80 53 88" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
+    title: "Classic Facelift",
+    duration: "60",
+    durationUnit: "min",
+    price: "₹2,500",
+    category: "facial",
+    tagline: "Core Sculpting & Tissue Lift",
+    description: "A blend of lymphatic drainage, hydration, and contouring tools, paired with premium masks for radiant, sculpted, and timeless skin.",
+    features: ["Deep Tissue Sculpting", "Hydration Mask", "Timeless Radiance"]
   },
   {
     id: 3,
-    title: "Neck & Shoulder Lymphatic Drainage",
-    description: "Relieve cervical tightness, posture strain & trapped upper body fluid congestion.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M36 20C36 30 38 42 42 52L24 64C20 66 18 74 18 84" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M64 20C64 30 62 42 58 52L76 64C80 66 82 74 82 84" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M42 52C46 56 54 56 58 52" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M26 70C42 66 58 66 74 70" strokeWidth="1.4" strokeDasharray="3 3" />
-      </svg>
-    ),
+    title: "Eye Face Glow Up",
+    duration: "70",
+    durationUnit: "min",
+    price: "₹2,700",
+    category: "facial",
+    tagline: "Orbital Focus & De-Bloat",
+    description: "A 70-minute facelift and eyelift using lymphatic drainage and specialized tools to reduce eye puffiness, sculpt face, refresh skin, and enhance youthful radiance.",
+    features: ["Targeted Eye De-Puffing", "Cheekbone Chisel", "Youthful Fluid Release"]
   },
   {
     id: 4,
-    title: "Back Lymphatic Drainage",
-    description: "Paravertebral fluid drainage, spinal decompression & deep back tissue detox.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M30 18C38 24 38 76 30 84M70 18C62 24 62 76 70 84" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M50 16V86" strokeWidth="1.5" strokeDasharray="4 3" />
-        <circle cx="50" cy="28" r="2.5" fill="currentColor" />
-        <circle cx="50" cy="44" r="2.5" fill="currentColor" />
-        <circle cx="50" cy="60" r="2.5" fill="currentColor" />
-      </svg>
-    ),
+    title: "Luxe Facelift",
+    duration: "80",
+    durationUnit: "min",
+    price: "₹3,000",
+    category: "facial",
+    tagline: "Restorative Ritual & Red Light",
+    description: "Lymphatic drainage, red light therapy, oxygen treatments, and back massage, delivering ultimate relaxation and glowing rejuvenation.",
+    features: ["Red Light Therapy", "Oxygen Infusion", "Back Massage Included"]
   },
   {
     id: 5,
-    title: "Arms Lymphatic Drainage",
-    description: "Bicep, tricep & axillary node clearance to reduce arm heaviness and water buildup.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M30 88V50C30 42 34 38 42 36L68 18" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M68 18C74 14 82 20 78 26L56 52C50 58 46 64 46 88" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="38" cy="38" r="2.5" fill="currentColor" />
-      </svg>
-    ),
+    title: "Microcurrent Facelift",
+    duration: "60",
+    durationUnit: "min",
+    price: "₹3,500",
+    category: "facial",
+    tagline: "Advanced Bio-Electric Lift",
+    description: "An advanced treatment with microcurrent device to tone muscles, reduce wrinkles, boost collagen, and achieve radiant, youthful skin.",
+    features: ["Muscle Toning Microcurrent", "Wrinkle Reduction", "Collagen Stimulation"]
   },
   {
     id: 6,
-    title: "Breast / Chest Lymphatic Drainage",
-    description: "Gentle pectoral release, axillary node stimulation & chest area decongestion.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M20 22C38 18 62 18 80 22" strokeWidth="1.6" strokeLinecap="round" />
-        <path d="M24 38C24 58 38 66 50 66C62 66 76 58 76 38" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M50 20V50" strokeWidth="1.2" strokeDasharray="3 3" />
-      </svg>
-    ),
+    title: "Elite Glow Facelift",
+    duration: "100",
+    durationUnit: "min",
+    price: "₹5,000",
+    category: "facial",
+    tagline: "The Master Clinic Protocol",
+    description: "A 100-minute complete spa experience featuring lymphatic drainage, eyelift, sculpting tools, microcurrent, and vacuum technology to remove whiteheads, blackheads, and cleanse pores naturally. Complete with a natural peel, superior hydration, and neck, shoulder, and back sculpting, this luxurious treatment is for rejuvenates & relaxation.",
+    features: ["Vacuum Pore Cleansing", "Natural Peel & Hydration", "Neck, Shoulder & Back Sculpting"]
   },
   {
     id: 7,
-    title: "Stomach Lymphatic Drainage",
-    description: "De-bloat abdomen, stimulate visceral fluid circulation & soften waistline contours.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M28 18C34 32 32 46 26 64C24 72 28 82 32 88" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M72 18C66 32 68 46 74 64C76 72 72 82 68 88" strokeWidth="1.8" strokeLinecap="round" />
-        <circle cx="50" cy="52" r="2.5" fill="currentColor" />
-        <path d="M34 44C44 50 56 50 66 44" strokeWidth="1.4" strokeDasharray="3 3" />
-      </svg>
-    ),
+    title: "Head Lymphatic Drainage",
+    duration: "75",
+    durationUnit: "min",
+    price: "₹3,000",
+    category: "body",
+    tagline: "Cranial Tension & Scalp Wellness",
+    description: "A deeply relaxing therapy designed to stimulate lymph flow, release built-up tension, improve circulation and promote overall scalp wellness naturally. The technique involves gentle rhythmic movements, pressure point stimulation and sculpting massage focused around the scalp, neck and shoulder area to encourage detoxification and relaxation.",
+    features: ["Headache & Tension Relief", "Scalp Detoxification", "Sensory Reset"]
   },
   {
     id: 8,
-    title: "Glutes Lymphatic Drainage",
-    badge: "Exclusively for Females",
-    description: "Gluteal fascia clearance, lower body fluid mobilization & localized sculpt.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M22 28C34 22 46 22 50 32C54 22 66 22 78 28C84 48 76 74 50 82C24 74 16 48 22 28Z" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M50 32V78" strokeWidth="1.4" strokeDasharray="3 3" />
-      </svg>
-    ),
+    title: "Brazilian Lymphatic Drainage for Hands",
+    duration: "45",
+    durationUnit: "min",
+    price: "₹2,500",
+    category: "body",
+    tagline: "Arm Contours & Node Clearance",
+    description: "Glow Flow hand lymphatic drainage is a specialized treatment focused on detoxifying, sculpting and revitalizing the hands and arms through precise lymphatic techniques. The session includes gentle rhythmic strokes, upward lifting movements, lymphatic pumping toward the underarms and targeted sculpting using advanced tools to enhance tone and definition.",
+    features: ["Underarm Pumping", "Arm Firming & Tone", "Fluid Retention Release"]
   },
   {
     id: 9,
-    title: "Legs & Thighs Lymphatic Drainage",
-    description: "Femoral & popliteal node clearance to relieve heavy legs and water retention.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <path d="M26 14C28 30 26 46 24 60C22 72 25 82 28 90" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M44 14C43 30 41 46 39 60C37 72 36 82 35 90" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M56 14C57 30 59 46 61 60C63 72 64 82 65 90" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M74 14C72 30 74 46 76 60C78 72 75 82 72 90" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    title: "Brazilian Lymphatic Drainage for Breast",
+    duration: "60",
+    durationUnit: "min",
+    price: "₹3,000",
+    category: "body",
+    tagline: "Gentle Pectoral & Node Decongestion",
+    description: "Glow Flow breast lymphatic drainage is a non-invasive therapy designed to detox, sculpt and rejuvenate the breast area naturally. The technique involves rhythmic hand movements, upward lifting strokes, circular pumping around lymph nodes and sculpting massage directed toward the underarms and collarbone to improve lymph flow, with a gentle polish and deeply hydrating mask.",
+    features: ["Natural Tissue Lifting", "Hydrating Firming Mask", "Relief from Heaviness"]
   },
   {
     id: 10,
-    title: "Full Body Lymphatic Drainage",
-    badge: "Systemic Clinical Ritual",
-    description: "Comprehensive head-to-toe clinical lymphatic mapping & systemic fluid elimination.",
-    iconSvg: (
-      <svg className="w-10 h-10 text-[#8C6D38]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-        <circle cx="50" cy="14" r="6" strokeWidth="1.6" />
-        <path d="M47 20C47 22 43 25 38 27" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M53 20C53 22 57 25 62 27" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M38 27C37 36 36 46 39 56C40 60 44 63 46 66" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M62 27C63 36 64 46 61 56C60 60 56 63 54 66" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M46 66L44 88M54 66L56 88" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="50" cy="27" r="2" fill="currentColor" />
-        <circle cx="50" cy="46" r="2" fill="currentColor" />
-      </svg>
-    ),
+    title: "Glow Flow Stomach Lymphatic Drainage",
+    duration: "90",
+    durationUnit: "min",
+    price: "₹4,500",
+    category: "body",
+    tagline: "Deep Abdominal Detox & Cupping",
+    description: "The Glow Flow stomach lymphatic drainage is a deeply therapeutic treatment designed to detoxify, de-bloat and sculpt the abdominal area. The service begins with a stomach lymphatic drainage massage, followed by stomach cupping therapy, gua sha, Brazilian wooden roller massage, body polishing, sculpting machine, body wrapping, and calming shoulder massage.",
+    features: ["Abdominal Cupping & Gua Sha", "Brazilian Wooden Roller", "Stomach Sculpting Machine & Wrap"]
   },
+  {
+    id: 11,
+    title: "Brazilian Lymphatic Drainage for Back",
+    duration: "60",
+    durationUnit: "min",
+    price: "₹3,500",
+    category: "body",
+    tagline: "Spinal Decompression & Back Detox",
+    description: "Experience the ultimate back detox with Brazilian lymphatic drainage for back. This revitalizing treatment begins with a therapeutic lymphatic massage to stimulate circulation, release trapped toxins and reduce bloating. Using sculpting tools, we contour the back to relieve tension, followed by gentle exfoliation and deep nourishment to hydrate and promote elasticity.",
+    features: ["Posture & Tension Relief", "Back Contour Sculpting", "Smoothing Exfoliation"]
+  },
+  {
+    id: 12,
+    title: "Brazilian Lymphatic Drainage for Legs",
+    duration: "80",
+    durationUnit: "min",
+    price: "₹4,000",
+    category: "body",
+    tagline: "Cellulite & Heavy Legs Clearance",
+    description: "Experience the ultimate leg transformation with Brazilian lymphatic drainage. This rejuvenating treatment begins with a detoxifying lymphatic drainage massage to stimulate circulation and reduce water retention. Using specialized sculpting tools, we contour and define the legs, targeting stubborn puffiness, gentle exfoliation, and deep skin nourishment to reduce cellulite.",
+    features: ["Reduces Cellulite & Bloating", "Popliteal & Femoral Clearance", "Light, Sculpted Legs"]
+  },
+  {
+    id: 13,
+    title: "Glow Flow Full Body Lymphatic Drainage",
+    duration: "3",
+    durationUnit: "hours",
+    price: "₹15,000",
+    category: "fullbody",
+    tagline: "Two Skilled Therapists Ritual",
+    description: "Glow Flow full body lymphatic drainage is a holistic therapy designed to detoxify, sculpt and rejuvenate the entire body. The treatment includes face, chest, stomach, back, legs and hand lymphatic drainage using rhythmic massage techniques, upward lifting strokes and targeted lymphatic pumping. Two skilled therapists work simultaneously to ensure balanced, effective and deeply relaxing results.",
+    features: ["Two Therapists Simultaneously", "Head-to-Toe Clearance", "Maximum Systemic Detox"]
+  }
 ];
 
 export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSectionProps) {
-  const [facialExpanded, setFacialExpanded] = useState(true);
+  const [activeTab, setActiveTab] = useState<'all' | 'facial' | 'body' | 'fullbody'>('all');
 
-  const facialService = servicesList[0];
-  const bodyServices = servicesList.slice(1);
+  const filteredOfferings = offeringsList.filter((item) => {
+    if (activeTab === 'all') return true;
+    return item.category === activeTab;
+  });
 
   return (
-    <section id="treatments" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#C5A880]/20 font-commissioner">
+    <section id="treatments" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner">
 
-      {/* Elegant Header */}
+      {/* Header matching Glow Flow Offerings.pdf */}
       <div className="text-center mb-16">
-        <div className="flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#8C6D38] mb-3">
-          <span className="w-10 h-[1px] bg-[#C5A880]/50" />
-          <span>Clinical Lymphatic Directory</span>
-          <span className="w-10 h-[1px] bg-[#C5A880]/50" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14382A] border border-[#D4AF37]/35 text-[11px] font-semibold tracking-[0.3em] uppercase text-[#E8D58C] mb-4">
+          <Sparkles className="w-3.5 h-3.5 text-[#E8D58C]" />
+          <span>G L O W &nbsp; F L O W</span>
         </div>
 
-        <h2 className="font-dongle text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal leading-[0.85] tracking-tight text-[#3A2E1E]">
-          Our Lymphatic Drainage Services
+        <h2 className="font-serif-luxury text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal leading-[0.9] tracking-tight text-white mb-4">
+          <span className="gold-gradient-text">Price List</span>
         </h2>
 
-        <p className="text-xs md:text-sm text-[#555555] font-light max-w-2xl mx-auto mt-3 leading-relaxed">
-          Targeted manual lymphatic protocols designed to release fluid retention, unmask natural contours, and activate systemic detox.
+        <p className="text-xs md:text-sm text-[#D8C9B4] font-light max-w-2xl mx-auto leading-relaxed">
+          Bespoke lymphatic drainage, natural facelifts, and body contouring protocols designed to sculpt, release retained fluid, and restore vitality.
         </p>
-      </div>
 
-      {/* 1. MASTER FEATURED CARD: FACIAL LYMPHATIC DRAINAGE (Service #1) */}
-      <div className="mb-12 rounded-3xl bg-gradient-to-br from-white via-[#FAF8F5] to-[#FAF6EE] border-2 border-[#C5A880]/40 p-6 sm:p-10 shadow-xl relative overflow-hidden">
-
-        {/* Top Header Row */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#C5A880]/25">
-          <div className="flex items-start gap-4">
-            <span className="w-10 h-10 rounded-full bg-[#FAF6EE] border border-[#C5A880]/50 flex items-center justify-center font-mono text-sm font-bold text-[#8C6D38] shrink-0 mt-1 shadow-inner">
-              01
-            </span>
-            <div>
-              <div className="flex items-center gap-3 flex-wrap">
-                <h3 className="font-dongle text-5xl sm:text-6xl text-[#3A2E1E] leading-none font-normal">
-                  {facialService.title}
-                </h3>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D38] bg-[#FAF6EE] px-3.5 py-1 rounded-full border border-[#C5A880]/40">
-                  7 Facial Sessions Available
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-[#555555] font-light mt-1 max-w-xl">
-                {facialService.description}
-              </p>
-            </div>
-          </div>
-
-          {/* Toggle facial sessions button */}
-          <button
-            onClick={() => setFacialExpanded(!facialExpanded)}
-            className="self-start md:self-auto gold-btn text-xs font-bold tracking-widest uppercase px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer shadow-md shrink-0"
-          >
-            <span>{facialExpanded ? 'Collapse Facial Menu' : 'View All 7 Facial Sessions'}</span>
-            {facialExpanded ? <ChevronUp className="w-4 h-4 text-black" /> : <ChevronDown className="w-4 h-4 text-black" />}
-          </button>
+        {/* Filter Navigation Tabs */}
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-8">
+          {[
+            { id: 'all', label: 'All Offerings (13)' },
+            { id: 'facial', label: 'Facial Protocols (6)' },
+            { id: 'body', label: 'Targeted Body (6)' },
+            { id: 'fullbody', label: 'Full Body Ritual (1)' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-full transition-all cursor-pointer ${
+                activeTab === tab.id
+                  ? 'bg-gradient-to-r from-[#F3E5C8] via-[#E8D58C] to-[#D4AF37] text-[#0A2018] shadow-md'
+                  : 'bg-[#14382A]/70 text-[#E8D58C] border border-[#D4AF37]/30 hover:border-[#D4AF37]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
-
-        {/* 7 Facial Sub-services Grid */}
-        {facialExpanded && (
-          <div className="mt-8">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8C6D38] mb-4">
-              Select Facial Treatment Protocol:
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {facialSubServices.map((sub, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => onSelectTreatment(sub.name)}
-                  className="group relative rounded-2xl p-5 bg-white border border-[#C5A880]/30 hover:border-[#C5A880] shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D38] mb-1">
-                      {sub.tagline}
-                    </div>
-                    <h4 className="font-dongle text-3.5xl text-[#3A2E1E] leading-none font-normal group-hover:text-[#8C6D38] transition-colors mb-2">
-                      {sub.name}
-                    </h4>
-                    <p className="text-xs text-[#555555] font-light leading-relaxed mb-4">
-                      {sub.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-[#C5A880]/15 flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-[#8C6D38] group-hover:text-black transition-colors">
-                    <span>Reserve Session</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
-      {/* 2. BODY SERVICES GRID (Services #2 through #10) */}
-      <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8C6D38] mb-6 text-center">
-        Targeted Body Lymphatic Protocols (Services 02 &ndash; 10)
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {bodyServices.map((service) => (
+      {/* Services List in PDF Card Design */}
+      <div className="space-y-6">
+        {filteredOfferings.map((service) => (
           <div
             key={service.id}
             onClick={() => onSelectTreatment(service.title)}
-            className="group rounded-2xl p-7 bg-white border border-[#C5A880]/30 hover:border-[#C5A880] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            className="emerald-card p-6 sm:p-8 rounded-2xl md:rounded-3xl border border-[#D4AF37]/35 hover:border-[#E8D58C] transition-all duration-300 cursor-pointer flex flex-col lg:flex-row lg:items-center justify-between gap-6 group relative overflow-hidden"
           >
-            <div>
-              {/* Header Info */}
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-[#FAF6EE] border border-[#C5A880]/40 flex items-center justify-center font-mono text-xs font-bold text-[#8C6D38]">
-                    {service.id < 10 ? `0${service.id}` : service.id}
-                  </span>
-                  <div className="group-hover:scale-110 transition-transform duration-300">
-                    {service.iconSvg}
-                  </div>
-                </div>
-
-                {service.badge && (
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#8C6D38] bg-[#FAF6EE] px-3 py-1 rounded-full border border-[#C5A880]/30">
-                    {service.badge}
-                  </span>
-                )}
+            {/* Left: Duration Badge & Service Details */}
+            <div className="flex items-start sm:items-center gap-5 sm:gap-7 flex-1">
+              
+              {/* Circular Gold Duration Badge from PDF */}
+              <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-full border-2 border-[#D4AF37] bg-[#0E2D21] flex flex-col items-center justify-center shrink-0 shadow-lg text-[#E8D58C] group-hover:border-[#F3E5C8] transition-colors">
+                <span className="font-serif-luxury text-2xl sm:text-3xl font-bold leading-none">
+                  {service.duration}
+                </span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest font-semibold text-[#D8C9B4] mt-0.5">
+                  {service.durationUnit}
+                </span>
               </div>
 
-              <h3 className="font-dongle text-4xl text-[#3A2E1E] leading-none font-normal mb-2 group-hover:text-[#8C6D38] transition-colors">
-                {service.title}
-              </h3>
+              {/* Title & Description */}
+              <div className="flex-1">
+                <div className="flex items-center gap-3 flex-wrap mb-1">
+                  <h3 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl text-white font-normal group-hover:text-[#E8D58C] transition-colors">
+                    {service.title}
+                  </h3>
+                  {service.tagline && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E8D58C] bg-[#0D281E] px-3 py-0.5 rounded-full border border-[#D4AF37]/30">
+                      {service.tagline}
+                    </span>
+                  )}
+                </div>
 
-              <div className="w-12 h-[1px] bg-[#C5A880]/30 mb-3" />
+                <p className="text-xs sm:text-sm text-[#D8C9B4] font-light leading-relaxed mt-2 max-w-3xl">
+                  {service.description}
+                </p>
 
-              <p className="text-xs text-[#555555] font-light leading-relaxed mb-6">
-                {service.description}
-              </p>
+                {service.features && (
+                  <div className="flex flex-wrap gap-2 mt-3.5">
+                    {service.features.map((feat, fIdx) => (
+                      <span
+                        key={fIdx}
+                        className="inline-flex items-center gap-1.5 text-[11px] text-[#F5E8D0]/90 bg-[#0A2018]/60 px-2.5 py-1 rounded-md border border-[#D4AF37]/20"
+                      >
+                        <CheckCircle className="w-3 h-3 text-[#E8D58C]" />
+                        <span>{feat}</span>
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onSelectTreatment(service.title);
-              }}
-              className="w-full text-xs font-bold tracking-widest uppercase text-[#8C6D38] bg-[#FAF6EE] border border-[#C5A880]/40 hover:bg-gradient-to-r hover:from-[#E5C384] hover:to-[#C5A880] hover:text-black py-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-            >
-              <span>Book {service.title}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            {/* Right: Price & Booking Action */}
+            <div className="flex lg:flex-col items-center lg:items-end justify-between gap-4 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#D4AF37]/20 shrink-0">
+              <div className="text-left lg:text-right">
+                <div className="text-[10px] uppercase tracking-widest text-[#D8C9B4]/80">Fee</div>
+                <div className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#E8D58C] tracking-wide">
+                  {service.price}
+                </div>
+              </div>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSelectTreatment(service.title);
+                }}
+                className="gold-btn text-xs tracking-wider uppercase font-bold px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer shadow-md hover:brightness-105 shrink-0"
+              >
+                <span>Reserve</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#0A2018]" />
+              </button>
+            </div>
+
           </div>
         ))}
+      </div>
+
+      {/* Footer address stripe matching PDF */}
+      <div className="mt-14 pt-6 border-t border-[#D4AF37]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#D8C9B4]/80">
+        <div className="flex items-center gap-2">
+          <Clock className="w-4 h-4 text-[#E8D58C]" />
+          <span>Sessions by Appointment &bull; +91 81041 01177</span>
+        </div>
+        <div>
+          New Clifton RHS, B wing, Ground floor, flat number 4, Prof Almeida Road, Bandra West, Mumbai 400052
+        </div>
       </div>
 
     </section>

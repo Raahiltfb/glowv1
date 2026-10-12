@@ -43,8 +43,8 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#FAF8F5] text-[#222222] selection:bg-[#E5C384]/30 selection:text-black flex flex-col font-commissioner">
-      {/* Sticky White & Gold Navbar */}
+    <div className="relative min-h-screen bg-[#0D281E] text-[#F5E8D0] selection:bg-[#D4AF37]/30 selection:text-white flex flex-col font-commissioner">
+      {/* Sticky Emerald Green & Gold Navbar */}
       <Navbar
         currentPage={currentPage}
         onNavigateHome={handleNavigateHome}

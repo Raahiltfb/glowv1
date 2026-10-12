@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Phone, MessageCircle, MapPin } from 'lucide-react';
-import { servicesList, facialSubServices } from './TreatmentsSection';
+import { offeringsList } from './TreatmentsSection';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -10,7 +10,7 @@ interface BookingModalProps {
 
 export default function BookingModal({
   isOpen,
-  initialTreatment = 'Facial Lymphatic Drainage',
+  initialTreatment = 'Instant Facelift',
   onClose,
 }: BookingModalProps) {
   const [selectedTreatment, setSelectedTreatment] = useState(initialTreatment);
@@ -27,32 +27,32 @@ export default function BookingModal({
   if (!isOpen) return null;
 
   const allTreatmentNames = [
-    ...servicesList.map((s) => s.title),
-    ...facialSubServices.map((f) => f.name),
+    ...offeringsList.map((s) => `${s.title} (${s.duration} ${s.durationUnit} - ${s.price})`),
+    'Face Yoga Consultation',
     'Custom Combination Session',
   ];
 
   const handleWhatsAppBooking = () => {
     const text = encodeURIComponent(
-      `Hello Glow Flow Studio,\n\nI would like to book a session for *${selectedTreatment}*.\n` +
+      `Hello GlowFlow Clinic,\n\nI would like to book an appointment for *${selectedTreatment}*.\n` +
         (name ? `Name: ${name}\n` : '') +
         (phone ? `Phone: ${phone}\n` : '') +
         (preferredDate ? `Preferred Date/Time: ${preferredDate}\n` : '') +
-        `Location: Khar West, Mumbai`
+        `Location: Bandra West, Mumbai`
     );
     window.open(`https://wa.me/918104101177?text=${text}`, '_blank');
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fade">
       <div
-        className="reference-card bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 relative border border-[#C5A880]/40 shadow-2xl max-h-[90vh] overflow-y-auto"
+        className="emerald-card bg-[#0D281E] rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border-2 border-[#D4AF37]/50 shadow-2xl max-h-[92vh] overflow-y-auto text-[#F5E8D0]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-[#777777] hover:text-black hover:bg-black/5 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-2 rounded-full text-[#D8C9B4] hover:text-white hover:bg-[#14382A] transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -60,16 +60,16 @@ export default function BookingModal({
 
         {/* Modal Header */}
         <div className="text-center mb-6">
-          <div className="flex items-center justify-center gap-2 font-commissioner text-xs font-semibold uppercase tracking-[0.25em] text-[#8C6D38] mb-2">
-            <span className="w-6 h-[1px] bg-[#C5A880]/50" />
-            <span>Private Sanctuary Session</span>
-            <span className="w-6 h-[1px] bg-[#C5A880]/50" />
+          <div className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#E8D58C] mb-2">
+            <span className="w-6 h-[1px] bg-[#D4AF37]/50" />
+            <span>GlowFlow Clinic Sanctuary</span>
+            <span className="w-6 h-[1px] bg-[#D4AF37]/50" />
           </div>
-          <h3 className="font-dongle text-4xl text-[#3A2E1E] font-normal leading-none">
-            Book Your Session
+          <h3 className="font-serif-luxury text-3xl sm:text-4xl text-white font-normal leading-none">
+            <span className="gold-gradient-text">Book Your Session</span>
           </h3>
-          <p className="font-commissioner text-[#666666] text-xs font-light mt-1">
-            Glow Flow Studio &bull; Khar West, Mumbai
+          <p className="text-[#D8C9B4] text-xs font-light mt-1">
+            Bandra West, Mumbai &bull; +91 81041 01177
           </p>
         </div>
 
@@ -77,16 +77,16 @@ export default function BookingModal({
         <div className="space-y-4 text-left font-commissioner">
           {/* Treatment Selector */}
           <div>
-            <label className="block font-commissioner text-xs font-semibold tracking-wider uppercase text-[#8C6D38] mb-1.5">
-              Select Treatment / Ritual
+            <label className="block text-xs font-semibold tracking-wider uppercase text-[#E8D58C] mb-1.5">
+              Select Protocol
             </label>
             <select
               value={selectedTreatment}
               onChange={(e) => setSelectedTreatment(e.target.value)}
-              className="w-full bg-[#FAF8F5] border border-[#C5A880]/40 rounded-md px-4 py-3 text-[#222222] text-sm focus:outline-none focus:border-[#8C6D38] cursor-pointer font-commissioner"
+              className="w-full bg-[#081B13] border border-[#D4AF37]/40 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#E8D58C] cursor-pointer font-commissioner"
             >
               {allTreatmentNames.map((tName, idx) => (
-                <option key={idx} value={tName} className="bg-white text-[#222222]">
+                <option key={idx} value={tName} className="bg-[#081B13] text-white">
                   {tName}
                 </option>
               ))}
@@ -95,69 +95,69 @@ export default function BookingModal({
 
           {/* Name */}
           <div>
-            <label className="block font-commissioner text-xs font-medium tracking-wider uppercase text-[#555555] mb-1">
+            <label className="block text-xs font-medium tracking-wider uppercase text-[#D8C9B4] mb-1">
               Your Name (Optional)
             </label>
             <input
               type="text"
-              placeholder="e.g. Ananya Sharma"
+              placeholder="e.g. Priya Sharma"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-[#FAF8F5] border border-[#C5A880]/40 rounded-md px-4 py-2.5 text-[#222222] text-sm focus:outline-none focus:border-[#8C6D38]"
+              className="w-full bg-[#081B13] border border-[#D4AF37]/40 rounded-xl px-4 py-2.5 text-white placeholder-[#D8C9B4]/40 text-sm focus:outline-none focus:border-[#E8D58C]"
             />
           </div>
 
           {/* Phone */}
           <div>
-            <label className="block font-commissioner text-xs font-medium tracking-wider uppercase text-[#555555] mb-1">
+            <label className="block text-xs font-medium tracking-wider uppercase text-[#D8C9B4] mb-1">
               Contact Phone (Optional)
             </label>
             <input
               type="tel"
-              placeholder="e.g. 98200XXXXX"
+              placeholder="e.g. +91 98200XXXXX"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full bg-[#FAF8F5] border border-[#C5A880]/40 rounded-md px-4 py-2.5 text-[#222222] text-sm focus:outline-none focus:border-[#8C6D38]"
+              className="w-full bg-[#081B13] border border-[#D4AF37]/40 rounded-xl px-4 py-2.5 text-white placeholder-[#D8C9B4]/40 text-sm focus:outline-none focus:border-[#E8D58C]"
             />
           </div>
 
           {/* Date / Time */}
           <div>
-            <label className="block font-commissioner text-xs font-medium tracking-wider uppercase text-[#555555] mb-1">
+            <label className="block text-xs font-medium tracking-wider uppercase text-[#D8C9B4] mb-1">
               Preferred Date / Time (Optional)
             </label>
             <input
               type="text"
-              placeholder="e.g. Tomorrow 3:00 PM"
+              placeholder="e.g. Tomorrow 4:00 PM"
               value={preferredDate}
               onChange={(e) => setPreferredDate(e.target.value)}
-              className="w-full bg-[#FAF8F5] border border-[#C5A880]/40 rounded-md px-4 py-2.5 text-[#222222] text-sm focus:outline-none focus:border-[#8C6D38]"
+              className="w-full bg-[#081B13] border border-[#D4AF37]/40 rounded-xl px-4 py-2.5 text-white placeholder-[#D8C9B4]/40 text-sm focus:outline-none focus:border-[#E8D58C]"
             />
           </div>
         </div>
 
         {/* Location Note */}
-        <div className="mt-6 p-3 rounded-md bg-[#FAF6EE] border border-[#C5A880]/30 flex items-start gap-2.5 text-xs text-[#555555] font-commissioner">
-          <MapPin className="w-4 h-4 text-[#8C6D38] shrink-0 mt-0.5" />
-          <span>Studio: 404 Mangal Bhavna CHS, Khar West, Mumbai</span>
+        <div className="mt-6 p-3 rounded-xl bg-[#081B13]/70 border border-[#D4AF37]/25 flex items-start gap-2.5 text-xs text-[#D8C9B4]">
+          <MapPin className="w-4 h-4 text-[#E8D58C] shrink-0 mt-0.5" />
+          <span>Clinic: New Clifton RHS, Prof Almeida Road, Bandra West, Mumbai</span>
         </div>
 
         {/* Action Buttons */}
         <div className="mt-6 space-y-3 font-commissioner">
           <button
             onClick={handleWhatsAppBooking}
-            className="w-full gold-btn text-xs tracking-widest uppercase font-bold py-3.5 rounded-md flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full gold-btn text-xs tracking-widest uppercase font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:brightness-105"
           >
-            <MessageCircle className="w-4 h-4 fill-black" />
-            <span>Book via WhatsApp Direct</span>
+            <MessageCircle className="w-4 h-4 fill-[#0A2018]" />
+            <span>Confirm via WhatsApp Direct</span>
           </button>
 
           <a
             href="tel:8104101177"
-            className="w-full font-commissioner text-xs font-semibold tracking-widest uppercase text-[#8C6D38] bg-[#FAF6EE] border border-[#C5A880]/40 hover:bg-[#C5A880]/10 py-3 rounded-md transition-all flex items-center justify-center gap-2 text-center"
+            className="w-full gold-btn-outline text-xs font-semibold tracking-widest uppercase py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
           >
             <Phone className="w-4 h-4" />
-            <span>Call Studio (8104101177)</span>
+            <span>Call Clinic (+91 81041 01177)</span>
           </a>
         </div>
       </div>

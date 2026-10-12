@@ -6,15 +6,16 @@ interface BoutiqueMenuSectionProps {
 
 export interface MenuItem {
   title: string;
-  subtitle?: string;
+  tagline: string;
   iconSvg: ReactNode;
 }
 
 export const menuItems: MenuItem[] = [
   {
     title: "Face Yoga",
+    tagline: "Facial Muscle Tone",
     iconSvg: (
-      <svg className="w-14 h-14 text-[#8C6D38] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+      <svg className="w-12 h-12 text-[#E8D58C] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
         <circle cx="50" cy="38" r="22" strokeWidth="1.8" />
         <path d="M38 35C42 31 58 31 62 35" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M38 46C43 51 57 51 62 46" strokeWidth="1.5" strokeLinecap="round" />
@@ -26,8 +27,9 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Facial Acupressure",
+    tagline: "Meridian Flow",
     iconSvg: (
-      <svg className="w-14 h-14 text-[#8C6D38] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+      <svg className="w-12 h-12 text-[#E8D58C] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
         <circle cx="50" cy="44" r="22" strokeWidth="1.8" />
         <circle cx="36" cy="34" r="2.5" fill="currentColor" />
         <circle cx="64" cy="34" r="2.5" fill="currentColor" />
@@ -43,8 +45,9 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Kansa Therapy",
+    tagline: "Bronze Alkalizing",
     iconSvg: (
-      <svg className="w-14 h-14 text-[#8C6D38] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+      <svg className="w-12 h-12 text-[#E8D58C] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
         <path d="M24 44C24 66 35 76 50 76C65 76 76 66 76 44H24Z" strokeWidth="2" strokeLinejoin="round" fill="currentColor" fillOpacity="0.15" />
         <path d="M20 44H80" strokeWidth="2.2" strokeLinecap="round" />
         <path d="M72 18L40 60" strokeWidth="3.5" strokeLinecap="round" />
@@ -54,8 +57,9 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Gua Sha",
+    tagline: "Medicinal Jade Sculpt",
     iconSvg: (
-      <svg className="w-14 h-14 text-[#8C6D38] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+      <svg className="w-12 h-12 text-[#E8D58C] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
         <path d="M34 24C41 18 57 18 70 30C80 40 80 58 68 70C55 82 35 76 25 63C18 50 24 33 34 24Z" strokeWidth="2" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1" />
         <path d="M44 36C47 33 57 36 60 42" strokeWidth="1.6" strokeDasharray="3 3" strokeLinecap="round" />
       </svg>
@@ -63,8 +67,9 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: "Facial Reflexology",
+    tagline: "Sensory Rebalance",
     iconSvg: (
-      <svg className="w-14 h-14 text-[#8C6D38] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+      <svg className="w-12 h-12 text-[#E8D58C] shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
         <circle cx="50" cy="38" r="22" strokeWidth="1.8" />
         <path d="M38 35C42 31 58 31 62 35" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M38 46C43 51 57 51 62 46" strokeWidth="1.5" strokeLinecap="round" />
@@ -77,28 +82,36 @@ export const menuItems: MenuItem[] = [
 
 export default function BoutiqueMenuSection({ onSelectMenu }: BoutiqueMenuSectionProps) {
   return (
-    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#C5A880]/20">
-      {/* Title Bar in Dongle font */}
-      <div className="text-center mb-10">
-        <h2 className="font-dongle text-6xl sm:text-7xl md:text-8xl font-normal leading-none tracking-wide text-[#3A2E1E]">
-          Also on the menu
+    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner">
+      {/* Title */}
+      <div className="text-center mb-12">
+        <div className="text-xs uppercase tracking-[0.25em] text-[#E8D58C] font-semibold mb-2">
+          Specialty Studio Disciplines
+        </div>
+        <h2 className="font-serif-luxury text-5xl sm:text-6xl md:text-7xl font-normal leading-none tracking-wide text-white">
+          <span className="gold-gradient-text">Also on the Menu</span>
         </h2>
       </div>
 
-      {/* Grid of 5 Horizontal Cards */}
+      {/* Grid of 5 Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {menuItems.map((item, idx) => (
           <div
             key={idx}
             onClick={() => onSelectMenu(item.title)}
-            className="reference-card p-4 flex items-center justify-start gap-4 cursor-pointer group hover:border-[#C5A880]/60 transition-all"
+            className="emerald-card p-5 flex flex-col items-center text-center justify-between gap-4 cursor-pointer group hover:border-[#E8D58C] transition-all rounded-2xl"
           >
-            <div className="group-hover:scale-105 transition-transform duration-300 text-[#8C6D38]">
+            <div className="p-3 rounded-full bg-[#0E2D21] border border-[#D4AF37]/35 group-hover:scale-110 transition-transform duration-300">
               {item.iconSvg}
             </div>
-            <h3 className="font-dongle text-3xl md:text-4xl text-[#8C6D38] font-normal leading-none">
-              {item.title}
-            </h3>
+            <div>
+              <div className="text-[10px] uppercase tracking-wider text-[#D8C9B4]/80 font-medium mb-1">
+                {item.tagline}
+              </div>
+              <h3 className="font-serif-luxury text-2xl md:text-2xl text-white font-medium leading-tight group-hover:text-[#E8D58C] transition-colors">
+                {item.title}
+              </h3>
+            </div>
           </div>
         ))}
       </div>

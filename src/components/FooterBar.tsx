@@ -3,55 +3,54 @@ import { MapPin, Phone, Mail, MessageCircle, Clock, Navigation } from 'lucide-re
 export default function FooterBar() {
   const getWhatsAppUrl = () => {
     const text = encodeURIComponent(
-      'Hello Glow Flow Studio,\n\nI would like to book a session at your Khar West studio. Please share available slots.'
+      'Hello GlowFlow Clinic,\n\nI would like to book a session at your Bandra West clinic. Please share available appointment slots.'
     );
     return `https://wa.me/918104101177?text=${text}`;
   };
 
   const getMapsUrl = () => {
-    return 'https://maps.google.com/?q=404+Mangal+Bhavna+CHS+Khar+West+Mumbai';
+    return 'https://maps.google.com/?q=New+Clifton+RHS+Prof+Almeida+Road+Bandra+West+Mumbai';
   };
 
   return (
-    <footer id="contact" className="bg-[#FAF8F5] text-[#222222] pt-20 pb-12 px-6 border-t border-[#C5A880]/30 font-commissioner">
+    <footer id="contact" className="bg-[#091F15] text-[#F5E8D0] pt-20 pb-12 px-6 border-t border-[#D4AF37]/25 font-commissioner">
       <div className="max-w-7xl mx-auto">
         
         {/* Contact Section Title */}
         <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#8C6D38] mb-2">
-            <span className="w-8 h-[1px] bg-[#C5A880]/40" />
-            <span>Studio Sanctuary & Reservation Directory</span>
-            <span className="w-8 h-[1px] bg-[#C5A880]/40" />
+          <div className="flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#E8D58C] mb-2">
+            <span className="w-8 h-[1px] bg-[#D4AF37]/50" />
+            <span>Clinic Sanctuary & Appointments</span>
+            <span className="w-8 h-[1px] bg-[#D4AF37]/50" />
           </div>
-          <h2 className="font-dongle text-6xl sm:text-7xl md:text-8xl font-normal leading-none tracking-wide text-[#3A2E1E]">
-            Get In Touch & Book Your Session
+          <h2 className="font-serif-luxury text-5xl sm:text-6xl md:text-7xl font-normal leading-none tracking-wide text-white">
+            <span className="gold-gradient-text">Contact & Booking</span>
           </h2>
-          <p className="text-xs md:text-sm text-[#555555] font-light max-w-2xl mx-auto mt-2">
-            Visit our private clinical sanctuary in Khar West, Mumbai. Reserve directly via WhatsApp, call our studio line, or reach us by email.
+          <p className="text-xs md:text-sm text-[#D8C9B4] font-light max-w-2xl mx-auto mt-3 leading-relaxed">
+            Visit our private clinical sanctuary in Bandra West, Mumbai. Reserve directly via WhatsApp, call our clinic desk, or email us.
           </p>
         </div>
 
-        {/* 3 High-Impact Contact Cards */}
+        {/* 3 High-Impact Contact Cards in Emerald & Gold */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           
-          {/* Card 1: Instant WhatsApp Booking */}
-          <div className="reference-card rounded-2xl p-8 bg-white border-2 border-[#C5A880]/40 flex flex-col justify-between shadow-lg relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-[#E5C384]/10 rounded-bl-full pointer-events-none" />
+          {/* Card 1: WhatsApp Direct Booking */}
+          <div className="emerald-card rounded-2xl p-8 border border-[#D4AF37]/35 flex flex-col justify-between group">
             <div>
-              <div className="w-14 h-14 rounded-full bg-[#E5C384]/25 border border-[#C5A880]/50 flex items-center justify-center text-[#8C6D38] mb-6 shadow-sm">
-                <MessageCircle className="w-7 h-7 fill-[#8C6D38]/10" />
+              <div className="w-14 h-14 rounded-full bg-[#0E2D21] border border-[#D4AF37]/50 flex items-center justify-center text-[#E8D58C] mb-6 shadow-sm">
+                <MessageCircle className="w-7 h-7" />
               </div>
 
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D38] bg-[#FAF6EE] px-3 py-1 rounded-full border border-[#C5A880]/30 block w-fit mb-3">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#E8D58C] bg-[#0A2018] px-3 py-1 rounded-full border border-[#D4AF37]/30 block w-fit mb-3">
                 Fastest Response
               </span>
 
-              <h3 className="font-dongle text-4xl text-[#3A2E1E] leading-none font-normal mb-2">
-                WhatsApp Direct Booking
+              <h3 className="font-serif-luxury text-3xl text-white font-normal mb-2">
+                WhatsApp Direct
               </h3>
 
-              <p className="text-xs text-[#555555] font-light leading-relaxed mb-6">
-                Chat directly with our studio coordinator to schedule your treatment session, select custom protocols, and confirm slots instantly.
+              <p className="text-xs text-[#D8C9B4] font-light leading-relaxed mb-6">
+                Chat directly with our clinic coordinator to schedule your treatment session, select custom protocols, and confirm slots instantly.
               </p>
             </div>
 
@@ -59,36 +58,36 @@ export default function FooterBar() {
               href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="gold-btn w-full text-xs font-bold tracking-widest uppercase py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-md"
+              className="gold-btn w-full text-xs font-bold tracking-widest uppercase py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4 fill-black" />
+              <MessageCircle className="w-4 h-4 fill-[#0A2018]" />
               <span>Book via WhatsApp (+91 8104101177)</span>
             </a>
           </div>
 
-          {/* Card 2: Studio Sanctuary Location */}
-          <div className="reference-card rounded-2xl p-8 bg-white border border-[#C5A880]/30 flex flex-col justify-between shadow-md relative overflow-hidden">
+          {/* Card 2: Clinic Location matching PDF */}
+          <div className="emerald-card rounded-2xl p-8 border border-[#D4AF37]/35 flex flex-col justify-between">
             <div>
-              <div className="w-14 h-14 rounded-full bg-[#E5C384]/25 border border-[#C5A880]/50 flex items-center justify-center text-[#8C6D38] mb-6 shadow-sm">
+              <div className="w-14 h-14 rounded-full bg-[#0E2D21] border border-[#D4AF37]/50 flex items-center justify-center text-[#E8D58C] mb-6 shadow-sm">
                 <MapPin className="w-7 h-7" />
               </div>
 
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D38] bg-[#FAF6EE] px-3 py-1 rounded-full border border-[#C5A880]/30 block w-fit mb-3">
-                Studio Location
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#E8D58C] bg-[#0A2018] px-3 py-1 rounded-full border border-[#D4AF37]/30 block w-fit mb-3">
+                Clinic Location
               </span>
 
-              <h3 className="font-dongle text-4xl text-[#3A2E1E] leading-none font-normal mb-2">
-                Khar West Sanctuary
+              <h3 className="font-serif-luxury text-3xl text-white font-normal mb-2">
+                Bandra West Sanctuary
               </h3>
 
-              <div className="text-xs text-[#555555] font-light leading-relaxed mb-4">
-                <p className="font-semibold text-[#3A2E1E] mb-1">404 Mangal Bhavna CHS</p>
-                <p>Khar West, Mumbai, Maharashtra 400052</p>
+              <div className="text-xs text-[#D8C9B4] font-light leading-relaxed mb-4">
+                <p className="font-semibold text-white mb-1">New Clifton RHS, B wing, Ground floor, flat 4</p>
+                <p>Prof Almeida Road, TPS -4, 1st Road, Bandra West, Pin - 400052</p>
               </div>
 
-              <div className="flex items-center gap-2 text-xs text-[#777777] bg-[#FAF8F5] p-3 rounded-lg border border-[#C5A880]/20 mb-6">
-                <Clock className="w-4 h-4 text-[#8C6D38] shrink-0" />
-                <span>Mon – Sun: 10:00 AM – 8:00 PM (By Appointment)</span>
+              <div className="flex items-center gap-2 text-xs text-[#D8C9B4]/80 bg-[#0A2018]/60 p-3 rounded-lg border border-[#D4AF37]/20 mb-6">
+                <Clock className="w-4 h-4 text-[#E8D58C] shrink-0" />
+                <span>Mon – Sun: By Appointment Only</span>
               </div>
             </div>
 
@@ -96,44 +95,44 @@ export default function FooterBar() {
               href={getMapsUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-xs font-semibold tracking-widest uppercase text-[#8C6D38] bg-[#FAF6EE] border border-[#C5A880]/40 hover:bg-[#C5A880]/10 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
+              className="gold-btn-outline w-full text-xs font-semibold tracking-widest uppercase py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
             >
               <Navigation className="w-4 h-4" />
-              <span>Get Directions on Google Maps</span>
+              <span>Get Directions</span>
             </a>
           </div>
 
           {/* Card 3: Phone & Email Lines */}
-          <div className="reference-card rounded-2xl p-8 bg-white border border-[#C5A880]/30 flex flex-col justify-between shadow-md relative overflow-hidden">
+          <div className="emerald-card rounded-2xl p-8 border border-[#D4AF37]/35 flex flex-col justify-between">
             <div>
-              <div className="w-14 h-14 rounded-full bg-[#E5C384]/25 border border-[#C5A880]/50 flex items-center justify-center text-[#8C6D38] mb-6 shadow-sm">
+              <div className="w-14 h-14 rounded-full bg-[#0E2D21] border border-[#D4AF37]/50 flex items-center justify-center text-[#E8D58C] mb-6 shadow-sm">
                 <Phone className="w-7 h-7" />
               </div>
 
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C6D38] bg-[#FAF6EE] px-3 py-1 rounded-full border border-[#C5A880]/30 block w-fit mb-3">
-                Studio Line & Email
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#E8D58C] bg-[#0A2018] px-3 py-1 rounded-full border border-[#D4AF37]/30 block w-fit mb-3">
+                Direct Contact
               </span>
 
-              <h3 className="font-dongle text-4xl text-[#3A2E1E] leading-none font-normal mb-2">
-                Direct Call & Email
+              <h3 className="font-serif-luxury text-3xl text-white font-normal mb-2">
+                Phone & Email
               </h3>
 
-              <div className="space-y-3 mb-6 text-xs text-[#555555]">
-                <div className="flex items-center gap-3 p-2.5 rounded-lg bg-[#FAF8F5] border border-[#C5A880]/20">
-                  <Phone className="w-4 h-4 text-[#8C6D38]" />
+              <div className="space-y-3 mb-6 text-xs text-[#D8C9B4]">
+                <div className="flex items-center gap-3 p-2.5 rounded-lg bg-[#0A2018]/60 border border-[#D4AF37]/20">
+                  <Phone className="w-4 h-4 text-[#E8D58C]" />
                   <div>
-                    <span className="block text-[10px] text-[#777777] uppercase">Phone Line</span>
-                    <a href="tel:8104101177" className="font-mono text-sm font-bold text-[#3A2E1E] hover:text-[#8C6D38]">
-                      +91 8104101177
+                    <span className="block text-[10px] text-[#D8C9B4]/70 uppercase">Call / WhatsApp</span>
+                    <a href="tel:8104101177" className="font-mono text-xs font-bold text-white hover:text-[#E8D58C]">
+                      +91 81041 01177 &bull; +91 99305 09906
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-2.5 rounded-lg bg-[#FAF8F5] border border-[#C5A880]/20">
-                  <Mail className="w-4 h-4 text-[#8C6D38]" />
+                <div className="flex items-center gap-3 p-2.5 rounded-lg bg-[#0A2018]/60 border border-[#D4AF37]/20">
+                  <Mail className="w-4 h-4 text-[#E8D58C]" />
                   <div>
-                    <span className="block text-[10px] text-[#777777] uppercase">Email Enquiries</span>
-                    <a href="mailto:2glowflow@gmail.com" className="font-mono text-xs font-semibold text-[#3A2E1E] hover:text-[#8C6D38]">
+                    <span className="block text-[10px] text-[#D8C9B4]/70 uppercase">Email</span>
+                    <a href="mailto:2glowflow@gmail.com" className="font-mono text-xs font-semibold text-white hover:text-[#E8D58C]">
                       2glowflow@gmail.com
                     </a>
                   </div>
@@ -143,25 +142,25 @@ export default function FooterBar() {
 
             <a
               href="tel:8104101177"
-              className="w-full text-xs font-semibold tracking-widest uppercase text-[#8C6D38] bg-[#FAF6EE] border border-[#C5A880]/40 hover:bg-[#C5A880]/10 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
+              className="gold-btn-outline w-full text-xs font-semibold tracking-widest uppercase py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Studio Now (+91 8104101177)</span>
+              <span>Call +91 81041 01177</span>
             </a>
           </div>
 
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-8 border-t border-[#C5A880]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center">
+        <div className="pt-8 border-t border-[#D4AF37]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center">
           <div className="flex items-center gap-3">
-            <img src="/glowflow.png" alt="Glow Flow Logo" className="h-10 w-auto object-contain" />
-            <span className="text-xs tracking-[0.2em] text-[#8C6D38] uppercase font-semibold">
-              GLOW FLOW STUDIO &bull; RELEASE. RESTORE. RADIATE.
+            <img src="/glowflow.png" alt="Glow Flow Logo" className="h-9 w-auto object-contain" />
+            <span className="text-xs tracking-[0.25em] text-[#E8D58C] uppercase font-semibold">
+              GLOWFLOW CLINIC &bull; LYMPHATIC DRAINAGE + WELLNESS
             </span>
           </div>
-          <div className="text-[11px] text-[#777777]">
-            &copy; {new Date().getFullYear()} GLOW FLOW STUDIO. ALL RIGHTS RESERVED.
+          <div className="text-[11px] text-[#D8C9B4]/70">
+            &copy; {new Date().getFullYear()} GLOWFLOW CLINIC. ALL RIGHTS RESERVED.
           </div>
         </div>
 

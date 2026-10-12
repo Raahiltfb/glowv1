@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&family=Dongle:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dongle:wght@300;400;700&family=Cinzel:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @layer utilities {
@@ -9,42 +9,74 @@
     font-family: 'Commissioner', sans-serif;
   }
   .font-serif-luxury {
-    font-family: 'Dongle', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
   }
   .font-cinzel {
-    font-family: 'Commissioner', sans-serif;
+    font-family: 'Cinzel', serif;
   }
   .gold-title {
-    color: #8C6D38;
-    font-family: 'Dongle', sans-serif;
+    color: #E8D58C;
+    font-family: 'Cormorant Garamond', serif;
   }
   .gold-gradient-text {
-    background: linear-gradient(135deg, #B89762 0%, #8C6D38 40%, #D4AF37 70%, #9E7D47 100%);
+    background: linear-gradient(135deg, #F5E8D0 0%, #E8D58C 35%, #D4AF37 70%, #B89762 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .gold-border {
+    border-color: rgba(212, 175, 55, 0.35);
+  }
   .gold-btn {
-    background: linear-gradient(135deg, #E5C384 0%, #C5A880 50%, #B89762 100%);
-    color: #000000;
+    background: linear-gradient(135deg, #F3E5C8 0%, #E8D58C 30%, #D4AF37 70%, #B89762 100%);
+    color: #0B221A;
     font-family: 'Commissioner', sans-serif;
-    font-weight: 600;
-    box-shadow: 0 4px 18px rgba(197, 168, 128, 0.3);
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
     transition: all 0.3s ease;
   }
   .gold-btn:hover {
-    box-shadow: 0 6px 24px rgba(197, 168, 128, 0.5);
+    box-shadow: 0 6px 28px rgba(212, 175, 55, 0.55);
+    filter: brightness(1.08);
     transform: translateY(-1px);
   }
+  .gold-btn-outline {
+    background: rgba(17, 50, 37, 0.6);
+    border: 1px solid rgba(232, 213, 140, 0.5);
+    color: #E8D58C;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .gold-btn-outline:hover {
+    background: rgba(232, 213, 140, 0.15);
+    border-color: #E8D58C;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+  }
+  .emerald-card {
+    background: rgba(20, 56, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(232, 213, 140, 0.1);
+    transition: all 0.3s ease;
+  }
+  .emerald-card:hover {
+    border-color: rgba(232, 213, 140, 0.7);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.15);
+    transform: translateY(-2px);
+  }
   .reference-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(197, 168, 128, 0.35);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(197, 168, 128, 0.08);
+    background: rgba(20, 56, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     transition: all 0.3s ease;
   }
   .reference-card:hover {
-    border-color: rgba(197, 168, 128, 0.8);
-    box-shadow: 0 8px 30px rgba(197, 168, 128, 0.2);
+    border-color: rgba(232, 213, 140, 0.7);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.15);
     transform: translateY(-2px);
   }
 }
@@ -60,13 +92,14 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   font-family: 'Commissioner', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAF8F5;
-  color: #222222;
+  background-color: #0D281E;
+  color: #F5E8D0;
   overflow-x: hidden;
 }
