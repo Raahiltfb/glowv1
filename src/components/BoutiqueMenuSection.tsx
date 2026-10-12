@@ -82,9 +82,9 @@ export const menuItems: MenuItem[] = [
 
 export default function BoutiqueMenuSection({ onSelectMenu }: BoutiqueMenuSectionProps) {
   return (
-    <section className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner overflow-hidden">
+    <section className="relative py-14 sm:py-20 px-4 sm:px-8 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner overflow-hidden">
       {/* Botanical Leaves Background Accent */}
-      <div className="absolute top-0 right-0 w-64 sm:w-80 pointer-events-none opacity-30 select-none z-0">
+      <div className="absolute top-0 right-0 w-52 sm:w-80 pointer-events-none opacity-20 sm:opacity-30 select-none z-0">
         <img
           src="/botanical-leaves-right.png"
           alt=""
@@ -93,34 +93,44 @@ export default function BoutiqueMenuSection({ onSelectMenu }: BoutiqueMenuSectio
       </div>
 
       {/* Title */}
-      <div className="text-center mb-12 relative z-10">
-        <div className="text-xs uppercase tracking-[0.25em] text-[#E8D58C] font-semibold mb-2">
+      <div className="text-center mb-8 sm:mb-12 relative z-10">
+        <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E8D58C] font-semibold mb-2">
           Specialty Studio Disciplines
         </div>
-        <h2 className="font-serif-luxury text-5xl sm:text-6xl md:text-7xl font-normal leading-none tracking-wide text-white">
+        <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-normal leading-tight tracking-wide text-white">
           <span className="gold-gradient-text">Also on the Menu</span>
         </h2>
+        <p className="text-xs sm:text-sm text-[#D8C9B4] font-light max-w-lg mx-auto mt-2 px-2">
+          Complementary holistic rituals to pair with your lymphatic drainage sessions.
+        </p>
       </div>
 
-      {/* Grid of 5 Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+      {/* 2-Column Luxury Grid on Mobile, 5-Column on Desktop */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 relative z-10">
         {menuItems.map((item, idx) => (
           <div
             key={idx}
             onClick={() => onSelectMenu(item.title)}
-            className="emerald-card p-5 flex flex-col items-center text-center justify-between gap-4 cursor-pointer group hover:border-[#E8D58C] transition-all rounded-2xl"
+            className={`emerald-card p-3.5 sm:p-5 flex flex-col items-center text-center justify-between gap-3 sm:gap-4 cursor-pointer group hover:border-[#E8D58C] transition-all rounded-xl sm:rounded-2xl ${
+              idx === menuItems.length - 1 ? 'col-span-2 sm:col-span-1' : ''
+            }`}
           >
-            <div className="p-3 rounded-full bg-[#0E2D21] border border-[#D4AF37]/35 group-hover:scale-110 transition-transform duration-300">
-              {item.iconSvg}
+            <div className="p-2 sm:p-3 rounded-full bg-[#0E2D21] border border-[#D4AF37]/35 group-hover:scale-105 transition-transform duration-300">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 text-[#E8D58C] flex items-center justify-center">
+                {item.iconSvg}
+              </div>
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-wider text-[#D8C9B4]/80 font-medium mb-1">
+              <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#D8C9B4]/80 font-medium mb-0.5 sm:mb-1">
                 {item.tagline}
               </div>
-              <h3 className="font-serif-luxury text-2xl md:text-2xl text-white font-medium leading-tight group-hover:text-[#E8D58C] transition-colors">
+              <h3 className="font-serif-luxury text-lg sm:text-2xl text-white font-medium leading-tight group-hover:text-[#E8D58C] transition-colors">
                 {item.title}
               </h3>
             </div>
+            <span className="text-[10px] uppercase tracking-wider font-semibold text-[#E8D58C] group-hover:text-white transition-colors">
+              Reserve &rarr;
+            </span>
           </div>
         ))}
       </div>

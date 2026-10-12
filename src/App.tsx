@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutPage from './components/AboutPage';
@@ -78,6 +79,27 @@ export default function App() {
 
       {/* Footer Bar */}
       <FooterBar />
+
+      {/* Floating Sticky Mobile Concierge Bar (Visible only on mobile <sm) */}
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#071912]/95 backdrop-blur-xl border-t border-[#D4AF37]/35 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_-10px_30px_rgba(0,0,0,0.7)] flex items-center gap-2.5">
+        <a
+          href="https://wa.me/918104101177?text=Hello%20GlowFlow%20Clinic%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20treatment."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gold-btn-outline flex-1 text-[11px] font-bold tracking-wider uppercase py-3 rounded-full flex items-center justify-center gap-1.5 text-center shadow-sm"
+        >
+          <MessageCircle className="w-3.5 h-3.5" />
+          <span>WhatsApp Desk</span>
+        </a>
+
+        <button
+          onClick={handleOpenBooking}
+          className="gold-btn flex-1 text-[11px] font-bold tracking-wider uppercase py-3 rounded-full flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
+        >
+          <span>Book Session</span>
+          <ArrowRight className="w-3.5 h-3.5 text-[#0A2018]" />
+        </button>
+      </div>
 
       {/* Booking Modal */}
       <BookingModal

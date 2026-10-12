@@ -81,6 +81,14 @@
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.15);
     transform: translateY(-2px) translateZ(0);
   }
+  /* Hide scrollbar for clean luxury horizontal swipe galleries */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @keyframes fade-in {

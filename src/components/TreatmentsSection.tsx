@@ -44,7 +44,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "facial",
     tagline: "Orbital Focus & De-Bloat",
-    description: "A 70-minute facelift and eyelift using lymphatic drainage and specialized tools to reduce eye puffiness, sculpt face, refresh skin, and enhance youthful radiance.",
+    description: "Facelift and eyelift protocol using lymphatic drainage to reduce eye puffiness, chisel cheekbones, and enhance youthful radiance.",
     features: ["Targeted Eye De-Puffing", "Cheekbone Chisel", "Youthful Fluid Release"]
   },
   {
@@ -64,7 +64,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "facial",
     tagline: "Advanced Bio-Electric Lift",
-    description: "An advanced treatment with microcurrent device to tone muscles, reduce wrinkles, boost collagen, and achieve radiant, youthful skin.",
+    description: "Advanced microcurrent protocol to tone muscles, diminish fine lines, stimulate collagen, and achieve sculpted facial contours.",
     features: ["Muscle Toning Microcurrent", "Wrinkle Reduction", "Collagen Stimulation"]
   },
   {
@@ -74,7 +74,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "facial",
     tagline: "The Master Clinic Protocol",
-    description: "A 100-minute complete spa experience featuring lymphatic drainage, eyelift, sculpting tools, microcurrent, and vacuum technology to remove whiteheads, blackheads, and cleanse pores naturally. Complete with a natural peel, superior hydration, and neck, shoulder, and back sculpting, this luxurious treatment is for rejuvenates & relaxation.",
+    description: "Complete spa experience featuring lymphatic drainage, eyelift, vacuum pore cleansing, natural peel, superior hydration, and back sculpting.",
     features: ["Vacuum Pore Cleansing", "Natural Peel & Hydration", "Neck, Shoulder & Back Sculpting"]
   },
   {
@@ -84,7 +84,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "body",
     tagline: "Cranial Tension & Scalp Wellness",
-    description: "A deeply relaxing therapy designed to stimulate lymph flow, release built-up tension, improve circulation and promote overall scalp wellness naturally. The technique involves gentle rhythmic movements, pressure point stimulation and sculpting massage focused around the scalp, neck and shoulder area to encourage detoxification and relaxation.",
+    description: "Gentle rhythmic movements and pressure point sculpting focused on the scalp, neck, and shoulders to release cranial tension and stimulate detox.",
     features: ["Headache & Tension Relief", "Scalp Detoxification", "Sensory Reset"]
   },
   {
@@ -94,7 +94,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "body",
     tagline: "Arm Contours & Node Clearance",
-    description: "Glow Flow hand lymphatic drainage is a specialized treatment focused on detoxifying, sculpting and revitalizing the hands and arms through precise lymphatic techniques. The session includes gentle rhythmic strokes, upward lifting movements, lymphatic pumping toward the underarms and targeted sculpting using advanced tools to enhance tone and definition.",
+    description: "Specialized arm and hand detox using rhythmic strokes, underarm pumping, and sculpting tools to release fluid and enhance muscle tone.",
     features: ["Underarm Pumping", "Arm Firming & Tone", "Fluid Retention Release"]
   },
   {
@@ -104,7 +104,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "body",
     tagline: "Gentle Pectoral & Node Decongestion",
-    description: "Glow Flow breast lymphatic drainage is a non-invasive therapy designed to detox, sculpt and rejuvenate the breast area naturally. The technique involves rhythmic hand movements, upward lifting strokes, circular pumping around lymph nodes and sculpting massage directed toward the underarms and collarbone to improve lymph flow, with a gentle polish and deeply hydrating mask.",
+    description: "Non-invasive therapy with upward lifting strokes and pumping around lymph nodes to improve circulation, paired with a firming hydration mask.",
     features: ["Natural Tissue Lifting", "Hydrating Firming Mask", "Relief from Heaviness"]
   },
   {
@@ -114,7 +114,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "body",
     tagline: "Deep Abdominal Detox & Cupping",
-    description: "The Glow Flow stomach lymphatic drainage is a deeply therapeutic treatment designed to detoxify, de-bloat and sculpt the abdominal area. The service begins with a stomach lymphatic drainage massage, followed by stomach cupping therapy, gua sha, Brazilian wooden roller massage, body polishing, sculpting machine, body wrapping, and calming shoulder massage.",
+    description: "Therapeutic abdominal detox combining stomach cupping, gua sha, Brazilian wooden roller massage, sculpting machine, and body wrap.",
     features: ["Abdominal Cupping & Gua Sha", "Brazilian Wooden Roller", "Stomach Sculpting Machine & Wrap"]
   },
   {
@@ -124,7 +124,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "body",
     tagline: "Spinal Decompression & Back Detox",
-    description: "Experience the ultimate back detox with Brazilian lymphatic drainage for back. This revitalizing treatment begins with a therapeutic lymphatic massage to stimulate circulation, release trapped toxins and reduce bloating. Using sculpting tools, we contour the back to relieve tension, followed by gentle exfoliation and deep nourishment to hydrate and promote elasticity.",
+    description: "Back detox and spinal tension release using contouring tools to stimulate circulation, followed by gentle exfoliation and deep hydration.",
     features: ["Posture & Tension Relief", "Back Contour Sculpting", "Smoothing Exfoliation"]
   },
   {
@@ -134,7 +134,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "min",
     category: "body",
     tagline: "Cellulite & Heavy Legs Clearance",
-    description: "Experience the ultimate leg transformation with Brazilian lymphatic drainage. This rejuvenating treatment begins with a detoxifying lymphatic drainage massage to stimulate circulation and reduce water retention. Using specialized sculpting tools, we contour and define the legs, targeting stubborn puffiness, gentle exfoliation, and deep skin nourishment to reduce cellulite.",
+    description: "Detoxifying leg contouring targeting water retention and cellulite through popliteal node clearance, specialized sculpting, and exfoliation.",
     features: ["Reduces Cellulite & Bloating", "Popliteal & Femoral Clearance", "Light, Sculpted Legs"]
   },
   {
@@ -144,7 +144,7 @@ export const offeringsList: TreatmentService[] = [
     durationUnit: "hours",
     category: "fullbody",
     tagline: "Two Skilled Therapists Ritual",
-    description: "Glow Flow full body lymphatic drainage is a holistic therapy designed to detoxify, sculpt and rejuvenate the entire body. The treatment includes face, chest, stomach, back, legs and hand lymphatic drainage using rhythmic massage techniques, upward lifting strokes and targeted lymphatic pumping. Two skilled therapists work simultaneously to ensure balanced, effective and deeply relaxing results.",
+    description: "Holistic full body therapy with two skilled therapists working simultaneously across face, chest, stomach, back, and legs for maximum systemic detox.",
     features: ["Two Therapists Simultaneously", "Head-to-Toe Clearance", "Maximum Systemic Detox"]
   }
 ];
@@ -158,16 +158,16 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
   });
 
   return (
-    <section id="treatments" className="relative py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner overflow-hidden">
+    <section id="treatments" className="relative py-14 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner overflow-hidden">
       {/* Botanical Leaves Background Layer inspired by PDF */}
-      <div className="absolute top-0 right-0 w-72 sm:w-96 md:w-[480px] pointer-events-none opacity-45 select-none z-0">
+      <div className="absolute top-0 right-0 w-60 sm:w-80 md:w-[480px] pointer-events-none opacity-20 sm:opacity-35 md:opacity-45 select-none z-0">
         <img
           src="/botanical-leaves-right.png"
           alt=""
           className="w-full h-auto object-contain transform translate-x-12 -translate-y-8"
         />
       </div>
-      <div className="absolute bottom-16 left-0 w-72 sm:w-96 md:w-[440px] pointer-events-none opacity-35 select-none z-0">
+      <div className="absolute bottom-16 left-0 w-60 sm:w-80 md:w-[440px] pointer-events-none opacity-15 sm:opacity-25 md:opacity-35 select-none z-0">
         <img
           src="/botanical-leaves-left.png"
           alt=""
@@ -176,52 +176,65 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
       </div>
 
       {/* Header */}
-      <div className="text-center mb-16 relative z-10">
+      <div className="text-center mb-10 sm:mb-16 relative z-10">
 
-        <h2 className="font-serif-luxury text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal leading-[0.9] tracking-tight text-white mb-4">
+        <h2 className="font-serif-luxury text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.9] tracking-tight text-white mb-3 sm:mb-4">
           <span className="gold-gradient-text">Treatment Protocols</span>
         </h2>
 
-        <p className="text-xs md:text-sm text-[#D8C9B4] font-light max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#D8C9B4] font-light max-w-2xl mx-auto leading-relaxed px-2">
           Bespoke lymphatic drainage, natural facelifts, and body contouring protocols designed to sculpt, release retained fluid, and restore vitality.
         </p>
 
-        {/* Filter Navigation Tabs */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-8">
-          {[
-            { id: 'all', label: 'All Offerings (13)' },
-            { id: 'facial', label: 'Facial Protocols (6)' },
-            { id: 'body', label: 'Targeted Body (6)' },
-            { id: 'fullbody', label: 'Full Body Ritual (1)' },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-full transition-all cursor-pointer ${
-                activeTab === tab.id
-                  ? 'bg-gradient-to-r from-[#F3E5C8] via-[#E8D58C] to-[#D4AF37] text-[#0A2018] shadow-md'
-                  : 'bg-[#14382A]/70 text-[#E8D58C] border border-[#D4AF37]/30 hover:border-[#D4AF37]'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Filter Navigation Tabs - Horizontally scrollable swipe track on mobile */}
+        <div className="w-full overflow-x-auto no-scrollbar py-2 mt-6 sm:mt-8">
+          <div className="inline-flex sm:flex sm:flex-wrap sm:justify-center items-center gap-2 px-1">
+            {[
+              { id: 'all', label: 'All Offerings (13)' },
+              { id: 'facial', label: 'Facial Protocols (6)' },
+              { id: 'body', label: 'Targeted Body (6)' },
+              { id: 'fullbody', label: 'Full Body Ritual (1)' },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`text-xs uppercase tracking-wider font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  activeTab === tab.id
+                    ? 'bg-gradient-to-r from-[#F3E5C8] via-[#E8D58C] to-[#D4AF37] text-[#0A2018] shadow-md font-bold'
+                    : 'bg-[#14382A]/80 text-[#E8D58C] border border-[#D4AF37]/30 hover:border-[#D4AF37]'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Services List in PDF Card Design without Pricing */}
-      <div className="space-y-6 relative z-10">
+      {/* Services List with Mobile-Optimized Architecture */}
+      <div className="space-y-4 sm:space-y-6 relative z-10">
         {filteredOfferings.map((service) => (
           <div
             key={service.id}
             onClick={() => onSelectTreatment(service.title)}
-            className="emerald-card p-6 sm:p-8 rounded-2xl md:rounded-3xl border border-[#D4AF37]/35 hover:border-[#E8D58C] cursor-pointer flex flex-col lg:flex-row lg:items-center justify-between gap-6 group relative"
+            className="emerald-card p-4.5 sm:p-7 md:p-8 rounded-2xl md:rounded-3xl border border-[#D4AF37]/35 hover:border-[#E8D58C] cursor-pointer flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6 group relative transition-all"
           >
+            {/* Mobile Top Row: Tagline & Sleek Duration Pill (Visible only on mobile <sm) */}
+            <div className="flex items-center justify-between gap-2 sm:hidden pb-1 border-b border-[#D4AF37]/15">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E8D58C] bg-[#0A2018] px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30 truncate max-w-[200px]">
+                {service.tagline || (service.category === 'facial' ? 'Facial Protocol' : service.category === 'fullbody' ? 'Signature Ritual' : 'Targeted Body')}
+              </span>
+              <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/45 bg-[#0E2D21] text-[#E8D58C] text-[11px] font-bold shrink-0">
+                <Clock className="w-3 h-3 text-[#E8D58C]" />
+                <span>{service.duration} {service.durationUnit.toUpperCase()}</span>
+              </div>
+            </div>
+
             {/* Left: Duration Badge & Service Details */}
-            <div className="flex items-start sm:items-center gap-5 sm:gap-7 flex-1">
+            <div className="flex items-start sm:items-center gap-4 sm:gap-6 md:gap-7 flex-1">
               
-              {/* Circular Gold Duration Badge from PDF */}
-              <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-full border-2 border-[#D4AF37] bg-[#0E2D21] flex flex-col items-center justify-center shrink-0 shadow-lg text-[#E8D58C] group-hover:border-[#F3E5C8] transition-colors">
+              {/* Circular Gold Duration Badge from PDF (Visible on Tablet & Desktop >=sm) */}
+              <div className="hidden sm:flex w-20 h-20 md:w-22 md:h-22 rounded-full border-2 border-[#D4AF37] bg-[#0E2D21] flex-col items-center justify-center shrink-0 shadow-lg text-[#E8D58C] group-hover:border-[#F3E5C8] transition-colors">
                 <span className="font-serif-luxury text-2xl sm:text-3xl font-bold leading-none">
                   {service.duration}
                 </span>
@@ -231,31 +244,31 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
               </div>
 
               {/* Title & Description */}
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap mb-1">
-                  <h3 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl text-white font-normal group-hover:text-[#E8D58C] transition-colors">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap mb-1">
+                  <h3 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl text-white font-normal group-hover:text-[#E8D58C] transition-colors leading-tight">
                     {service.title}
                   </h3>
                   {service.tagline && (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E8D58C] bg-[#0D281E] px-3 py-0.5 rounded-full border border-[#D4AF37]/30">
+                    <span className="hidden sm:inline-block text-[10px] font-semibold uppercase tracking-wider text-[#E8D58C] bg-[#0D281E] px-3 py-0.5 rounded-full border border-[#D4AF37]/30">
                       {service.tagline}
                     </span>
                   )}
                 </div>
 
-                <p className="text-xs sm:text-sm text-[#D8C9B4] font-light leading-relaxed mt-2 max-w-3xl">
+                <p className="text-xs sm:text-sm text-[#D8C9B4] font-light leading-relaxed mt-1 sm:mt-2 max-w-3xl">
                   {service.description}
                 </p>
 
                 {service.features && (
-                  <div className="flex flex-wrap gap-2 mt-3.5">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2.5 sm:mt-3.5">
                     {service.features.map((feat, fIdx) => (
                       <span
                         key={fIdx}
-                        className="inline-flex items-center gap-1.5 text-[11px] text-[#F5E8D0]/90 bg-[#0A2018]/60 px-2.5 py-1 rounded-md border border-[#D4AF37]/20"
+                        className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-[11px] text-[#F5E8D0]/90 bg-[#0A2018]/60 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-[#D4AF37]/20"
                       >
-                        <CheckCircle className="w-3 h-3 text-[#E8D58C]" />
-                        <span>{feat}</span>
+                        <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#E8D58C] shrink-0" />
+                        <span className="truncate">{feat}</span>
                       </span>
                     ))}
                   </div>
@@ -264,13 +277,13 @@ export default function TreatmentsSection({ onSelectTreatment }: TreatmentsSecti
             </div>
 
             {/* Right: Booking Action */}
-            <div className="flex items-center justify-end pt-4 lg:pt-0 border-t lg:border-t-0 border-[#D4AF37]/20 shrink-0">
+            <div className="flex items-center justify-end pt-3 sm:pt-4 lg:pt-0 border-t lg:border-t-0 border-[#D4AF37]/20 shrink-0 w-full sm:w-auto">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   onSelectTreatment(service.title);
                 }}
-                className="gold-btn text-xs tracking-wider uppercase font-bold px-7 py-3.5 rounded-full flex items-center gap-2 cursor-pointer shadow-md hover:brightness-105 shrink-0"
+                className="gold-btn text-xs tracking-wider uppercase font-bold py-2.5 sm:py-3.5 px-6 sm:px-7 rounded-full flex items-center justify-center gap-2 cursor-pointer shadow-md hover:brightness-105 w-full sm:w-auto"
               >
                 <span>Reserve Ritual</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#0A2018]" />
