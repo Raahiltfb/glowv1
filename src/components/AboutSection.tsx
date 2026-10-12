@@ -1,146 +1,140 @@
-import { MapPin, ShieldCheck, Heart, User } from 'lucide-react';
+import { ShieldCheck, Award, MapPin } from 'lucide-react';
 
 interface AboutSectionProps {
   onOpenBooking: () => void;
 }
 
-export const founderMember = {
-  name: "Lead Founder & Master Practitioner",
-  title: "Founder & Master Lymphatic Specialist",
-};
-
-export const staffMembers = [
-  { name: "Senior Facial Osteopath", title: "Facial Sculpting Specialist" },
-  { name: "Clinical Lymphatic Specialist", title: "Full Body Detox Therapist" },
-  { name: "Body Sculpting Specialist", title: "Contour & Drainage Specialist" },
-  { name: "Fascia & Gua Sha Therapist", title: "Precision Release Specialist" },
-  { name: "Recovery & Drainage Specialist", title: "Lymphatic Activation Specialist" },
-];
+interface AboutSectionProps {
+  onOpenBooking: () => void;
+}
 
 export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
   return (
-    <section id="about-glow" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#C5A880]/20">
-      {/* Header in Dongle font */}
-      <div className="text-center mb-16">
-        <h2 className="font-dongle text-5xl sm:text-6xl md:text-7xl text-[#3A2E1E] font-normal leading-[0.9] tracking-wide max-w-4xl mx-auto">
-          True facial definition is not created on the surface; it is unmasked from within.
-        </h2>
+    <section id="about" className="relative py-16 sm:py-24 px-4 sm:px-8 md:px-12 max-w-7xl mx-auto border-b border-[#D4AF37]/25 font-commissioner overflow-hidden">
+      {/* Botanical Leaves Background Layer */}
+      <div className="absolute top-10 right-0 w-52 sm:w-80 md:w-96 pointer-events-none opacity-15 sm:opacity-30 md:opacity-40 select-none z-0">
+        <img
+          src="/botanical-leaves-right.png"
+          alt=""
+          className="w-full h-auto object-contain transform translate-x-12 -translate-y-8"
+        />
       </div>
-
-      {/* Main 2 Column Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
-        {/* Left Column: Biological Science & Founder Bio */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-2 font-commissioner text-xs font-semibold uppercase tracking-[0.25em] text-[#8C6D38]">
-            <span className="w-6 h-[1px] bg-[#C5A880]" />
-            <span>About Glow Flow</span>
-          </div>
-
-          <h3 className="font-dongle text-4xl md:text-5xl text-[#8C6D38] font-normal leading-none">
-            The Science of Interstitial Flow
-          </h3>
-
-          <p className="font-commissioner text-[#555555] text-base leading-relaxed font-light">
-            Modern stress, environmental factors, and metabolic slowdown cause fluid buildup in delicate fascial pathways, resulting in puffiness, loss of contour, and skin fatigue.
-          </p>
-
-          <p className="font-commissioner text-[#555555] text-sm leading-relaxed font-light">
-            Unlike the circulatory system, the lymphatic system has no central pump. Glow Flow applies rhythmic, directional manual pressure to clear stagnant fluid, accelerate waste evacuation, and restore natural jawline & cheekbone architecture.
-          </p>
-
-          <div className="grid grid-cols-2 gap-6 pt-4 border-t border-[#C5A880]/20">
-            <div>
-              <div className="font-dongle text-5xl text-[#8C6D38] leading-none">100%</div>
-              <div className="font-commissioner text-[11px] uppercase tracking-wider text-[#777777] mt-1">Non-Invasive Protocol</div>
-            </div>
-            <div>
-              <div className="font-dongle text-5xl text-[#8C6D38] leading-none">Khar West</div>
-              <div className="font-commissioner text-[11px] uppercase tracking-wider text-[#777777] mt-1">Private Mumbai Sanctuary</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column: Studio Card */}
-        <div className="reference-card rounded-2xl p-8 lg:p-10 relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] via-[#FAF8F5] to-[#F5F0E8] border border-[#C5A880]/30">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-[#E5C384]/20 border border-[#C5A880]/50 flex items-center justify-center text-[#8C6D38]">
-              <MapPin className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="font-dongle text-3xl text-[#3A2E1E] font-normal leading-none">Glow Flow Studio</h4>
-              <p className="font-commissioner text-[#777777] text-xs">404 Mangal Bhavna CHS, Khar West, Mumbai</p>
-            </div>
-          </div>
-
-          <p className="font-commissioner text-[#444444] text-sm leading-relaxed font-light mb-8">
-            Our private sanctuary in Khar West provides a serene, restorative space dedicated strictly to personalized body and facial lymphatic artistry.
-          </p>
-
-          <div className="space-y-4 mb-8">
-            <div className="flex items-start gap-3 text-xs text-[#555555] font-commissioner">
-              <ShieldCheck className="w-4 h-4 text-[#8C6D38] shrink-0 mt-0.5" />
-              <span>Certified anatomical practitioners trained in manual lymphatic mapping.</span>
-            </div>
-            <div className="flex items-start gap-3 text-xs text-[#555555] font-commissioner">
-              <Heart className="w-4 h-4 text-[#8C6D38] shrink-0 mt-0.5" />
-              <span>Individualized targeted drainage protocols for optimal systemic flow.</span>
-            </div>
-          </div>
-
-          <button
-            onClick={onOpenBooking}
-            className="w-full gold-btn font-commissioner text-xs tracking-widest uppercase font-semibold py-3.5 rounded-full cursor-pointer"
-          >
-            Reserve Your Private Session
-          </button>
-        </div>
+      <div className="absolute bottom-10 left-0 w-52 sm:w-80 pointer-events-none opacity-15 sm:opacity-25 md:opacity-30 select-none z-0">
+        <img
+          src="/botanical-leaves-left.png"
+          alt=""
+          className="w-full h-auto object-contain transform -translate-x-12"
+        />
       </div>
-
-      {/* Team Showcase Subsection: 1 Founder + 5 Staff Grid */}
-      <div className="pt-8 border-t border-[#C5A880]/20">
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 font-commissioner text-xs font-semibold uppercase tracking-[0.25em] text-[#8C6D38] mb-1">
-            <span className="w-8 h-[1px] bg-[#C5A880]/40" />
-            <span>Clinical Excellence</span>
-            <span className="w-8 h-[1px] bg-[#C5A880]/40" />
-          </div>
-          <h3 className="font-dongle text-5xl md:text-6xl text-[#3A2E1E] leading-none mt-1">
-            Our Expert Practitioner Team
-          </h3>
+      
+      {/* SECTION 1: ABOUT GLOW FLOW & FOUNDER PHILOSOPHY */}
+      <div className="mb-14 sm:mb-20 relative z-10">
+        <div className="flex items-center justify-center gap-2.5 sm:gap-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E8D58C] mb-3">
+          <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
+          <span>Clinic Sanctuary & Philosophy</span>
+          <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
         </div>
 
-        {/* 1 Founder Card on Top */}
-        <div className="max-w-md mx-auto mb-6">
-          <div className="reference-card p-5 rounded-2xl flex items-center justify-center gap-4 text-center bg-gradient-to-r from-[#FAF6EE] via-[#FFFFFF] to-[#FAF6EE] border border-[#C5A880]/40 shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-[#C5A880]/20 border border-[#C5A880]/50 flex items-center justify-center text-[#8C6D38] shrink-0">
-              <User className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <h4 className="font-dongle text-3xl text-[#3A2E1E] leading-none font-normal">
-                {founderMember.name}
-              </h4>
-              <p className="font-commissioner text-xs text-[#8C6D38] font-semibold uppercase tracking-wider">
-                {founderMember.title}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* 5 Staff Cards Underneath */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {staffMembers.map((member, idx) => (
-            <div key={idx} className="reference-card p-4 rounded-xl flex flex-col items-center text-center bg-white border border-[#C5A880]/30">
-              <div className="w-10 h-10 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/35 flex items-center justify-center text-[#8C6D38] mb-2 shrink-0">
-                <User className="w-5 h-5" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mt-5 sm:mt-6">
+          
+          {/* Left Column: Signature Green & Gold Zen Emblem Frame (NO FACES) */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl bg-gradient-to-br from-[#14382A] via-[#0E2D21] to-[#081C14] p-6 sm:p-10 flex flex-col items-center justify-center text-center">
+              
+              {/* Concentric Gold Rings Graphic inspired by PDF Cover */}
+              <div className="relative w-36 h-36 sm:w-52 sm:h-52 rounded-full border border-[#D4AF37]/30 flex items-center justify-center mb-4 sm:mb-6">
+                <div className="w-28 h-28 sm:w-42 sm:h-42 rounded-full border border-[#D4AF37]/50 flex items-center justify-center">
+                  <div className="w-22 h-22 sm:w-32 sm:h-32 rounded-full border-2 border-[#E8D58C] bg-[#0A2018] flex flex-col items-center justify-center shadow-inner">
+                    <span className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#E8D58C] leading-none">
+                      GF
+                    </span>
+                    <span className="text-[8px] sm:text-[9px] uppercase tracking-widest text-[#D8C9B4] font-semibold mt-1">
+                      CLINIC
+                    </span>
+                  </div>
+                </div>
+                {/* Floating gold orb */}
+                <div className="absolute top-2 right-4 sm:right-6 w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#E8D58C] shadow-[0_0_12px_#E8D58C]" />
               </div>
-              <h4 className="font-dongle text-2.5xl md:text-3xl text-[#3A2E1E] leading-none font-normal">
-                {member.name}
-              </h4>
-              <p className="font-commissioner text-[11px] text-[#8C6D38] font-medium uppercase tracking-wider mt-1">
-                {member.title}
-              </p>
+
+              <div className="text-white">
+                <h4 className="font-serif-luxury text-2xl sm:text-4xl leading-tight font-normal text-white">
+                  Glow Flow Studio
+                </h4>
+                <p className="text-xs text-[#D8C9B4] font-light mt-1.5 sm:mt-2 max-w-xs leading-relaxed">
+                  Bandra West, Mumbai &bull; Non-invasive natural facelift and systemic fluid therapy
+                </p>
+              </div>
+
+              {/* Verified Badge */}
+              <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[#D4AF37]/25 w-full flex items-center justify-around text-[11px] sm:text-xs text-[#E8D58C]">
+                <div className="flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span>Clinical Standard</span>
+                </div>
+                <div className="w-1 h-1 rounded-full bg-[#D4AF37]" />
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span>100% Non-Invasive</span>
+                </div>
+              </div>
+
             </div>
-          ))}
+          </div>
+
+          {/* Right Column: Detailed Text & Story */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl text-white font-normal leading-[1.1] sm:leading-[1.05] tracking-tight">
+              <span className="gold-gradient-text">"True facial definition is not created on the surface;</span>{" "}
+              <span>it is unmasked from within."</span>
+            </h2>
+
+            <div className="w-16 sm:w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent my-3 sm:my-4" />
+
+            <p className="text-[#D8C9B4] text-sm sm:text-base md:text-lg leading-relaxed font-light">
+              Founded in Mumbai, GlowFlow Clinic was established to offer a refined clinical standard for manual lymphatic drainage, natural facelifts, and biological rejuvenation.
+            </p>
+
+            <p className="text-[#D8C9B4] text-xs sm:text-sm md:text-base leading-relaxed font-light">
+              Trained in osteopathic fascia release, Brazilian lymphatic drainage, and anatomical fluid mapping, our practitioners utilize a rhythmic, pump-driven methodology. We naturally sculpt jawlines, decongest orbital fluid, relieve whole-body bloating, and restore youthful elasticity without needles or invasive interventions.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-[#D4AF37]/25">
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl emerald-card">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8D58C] shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs font-semibold text-white uppercase tracking-wider">
+                    Non-Invasive Protocols
+                  </div>
+                  <div className="text-[11px] text-[#D8C9B4] mt-0.5">
+                    Anatomical rhythm & natural sculpting
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl emerald-card">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8D58C] shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs font-semibold text-white uppercase tracking-wider">
+                    Bandra West Sanctuary
+                  </div>
+                  <div className="text-[11px] text-[#D8C9B4] mt-0.5">
+                    Private bespoke clinic suites
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={onOpenBooking}
+                className="gold-btn text-xs tracking-widest uppercase font-bold py-3.5 px-7 sm:px-8 rounded-full cursor-pointer shadow-lg hover:brightness-105 transition-all w-full sm:w-auto text-center"
+              >
+                Book a Private Consultation
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

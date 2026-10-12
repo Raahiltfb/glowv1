@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import AboutPage from './components/AboutPage';
+import AboutSection from './components/AboutSection';
 import TreatmentsSection from './components/TreatmentsSection';
 import BoutiqueMenuSection from './components/BoutiqueMenuSection';
 import FooterBar from './components/FooterBar';
 import BookingModal from './components/BookingModal';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'treatments'>('home');
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedTreatment, setSelectedTreatment] = useState<string | undefined>();
 
@@ -18,8 +18,8 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleNavigateAbout = () => {
-    setCurrentPage('about');
+  const handleNavigateTreatments = () => {
+    setCurrentPage('treatments');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -49,35 +49,36 @@ export default function App() {
       <Navbar
         currentPage={currentPage}
         onNavigateHome={handleNavigateHome}
-        onNavigateAbout={handleNavigateAbout}
+        onNavigateTreatments={handleNavigateTreatments}
         onNavigateSection={handleNavigateSection}
         onOpenBooking={handleOpenBooking}
       />
 
       {/* Main Content Area */}
       <main className="flex-1">
+        {/* PAGE 1: HOME (Hero + About Section) */}
         {currentPage === 'home' && (
           <>
-            {/* 1. Hero Section */}
             <HeroSection
               onOpenBooking={handleOpenBooking}
-              onExploreTreatments={() => handleNavigateSection('treatments')}
+              onExploreTreatments={handleNavigateTreatments}
             />
 
-            {/* 2. 10 Lymphatic Drainage Services */}
-            <TreatmentsSection onSelectTreatment={handleSelectTreatment} />
-
-            {/* 3. Also on the menu (Face Yoga, Acupressure, Kansa, Gua Sha, Reflexology) */}
-            <BoutiqueMenuSection onSelectMenu={handleSelectTreatment} />
+            {/* About Section on Home */}
+            <AboutSection onOpenBooking={handleOpenBooking} />
           </>
         )}
 
-        {currentPage === 'about' && (
-          <AboutPage onOpenBooking={handleOpenBooking} />
+        {/* PAGE 2: TREATMENTS (Treatments + Also on the Menu + Contact part) */}
+        {currentPage === 'treatments' && (
+          <div className="pt-16 sm:pt-20">
+            <TreatmentsSection onSelectTreatment={handleSelectTreatment} />
+            <BoutiqueMenuSection onSelectMenu={handleSelectTreatment} />
+          </div>
         )}
       </main>
 
-      {/* Footer Bar */}
+      {/* Footer / Contact Part */}
       <FooterBar />
 
       {/* Floating Sticky Mobile Concierge Bar (Visible only on mobile <sm) */}

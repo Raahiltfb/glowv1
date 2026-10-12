@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 
 interface NavbarProps {
-  currentPage: 'home' | 'about';
+  currentPage: 'home' | 'treatments';
   onNavigateHome: () => void;
-  onNavigateAbout: () => void;
+  onNavigateTreatments: () => void;
   onNavigateSection: (sectionId: string) => void;
   onOpenBooking: () => void;
 }
@@ -12,7 +12,7 @@ interface NavbarProps {
 export default function Navbar({
   currentPage,
   onNavigateHome,
-  onNavigateAbout,
+  onNavigateTreatments,
   onNavigateSection,
   onOpenBooking,
 }: NavbarProps) {
@@ -30,7 +30,7 @@ export default function Navbar({
 
   const sectionTabs = [
     { id: 'hero', label: 'Home' },
-    { id: 'treatments', label: 'Treatments' },
+    { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -71,13 +71,13 @@ export default function Navbar({
             </button>
 
             <button
-              onClick={onNavigateAbout}
-              className={`font-commissioner text-xs font-semibold uppercase tracking-wider px-5 py-2 rounded-full transition-all cursor-pointer ${currentPage === 'about'
+              onClick={onNavigateTreatments}
+              className={`font-commissioner text-xs font-semibold uppercase tracking-wider px-5 py-2 rounded-full transition-all cursor-pointer ${currentPage === 'treatments'
                 ? 'bg-gradient-to-r from-[#F3E5C8] via-[#E8D58C] to-[#D4AF37] text-[#0A2018] font-bold shadow-md'
                 : 'text-[#E8D58C]/70 hover:text-white'
                 }`}
             >
-              About
+              Treatments
             </button>
           </div>
 
@@ -144,13 +144,13 @@ export default function Navbar({
               </button>
               <button
                 onClick={() => {
-                  onNavigateAbout();
+                  onNavigateTreatments();
                   setMobileMenuOpen(false);
                 }}
-                className={`font-commissioner text-xs font-semibold uppercase px-4 py-2 rounded-full flex-1 transition-all ${currentPage === 'about' ? 'bg-[#E8D58C] text-[#0A2018] font-bold shadow-sm' : 'text-[#E8D58C]/70'
+                className={`font-commissioner text-xs font-semibold uppercase px-4 py-2 rounded-full flex-1 transition-all ${currentPage === 'treatments' ? 'bg-[#E8D58C] text-[#0A2018] font-bold shadow-sm' : 'text-[#E8D58C]/70'
                   }`}
               >
-                About
+                Treatments
               </button>
             </div>
 
