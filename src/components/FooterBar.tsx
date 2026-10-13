@@ -23,25 +23,25 @@ export default function FooterBar() {
         />
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Contact Section Title */}
         <div className="text-center mb-10 sm:mb-14">
           <div className="flex items-center justify-center gap-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E8D58C] mb-2">
             <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
-            <span>Clinic Sanctuary & Appointments</span>
+            <span>Clinic  Appointments</span>
             <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
           </div>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-normal leading-tight tracking-wide text-white">
             <span className="gold-gradient-text">Contact & Booking</span>
           </h2>
           <p className="text-xs sm:text-sm text-[#D8C9B4] font-light max-w-2xl mx-auto mt-2 leading-relaxed px-2">
-            Visit our private clinical sanctuary in Bandra West, Mumbai. Reserve directly via WhatsApp, call our clinic desk, or email us.
+            Visit our private studio in Bandra West, Mumbai. Reserve directly via WhatsApp, call our clinic desk, or email us.
           </p>
         </div>
 
         {/* 3 High-Impact Contact Cards in Emerald & Gold */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 mb-12 sm:mb-16">
-          
+
           {/* Card 1: WhatsApp Direct Booking */}
           <div className="emerald-card rounded-2xl p-5 sm:p-8 border border-[#D4AF37]/35 flex flex-col justify-between group">
             <div>
@@ -85,7 +85,7 @@ export default function FooterBar() {
               </span>
 
               <h3 className="font-serif-luxury text-2xl sm:text-3xl text-white font-normal mb-1.5 sm:mb-2">
-                Bandra West Sanctuary
+                Bandra West
               </h3>
 
               <div className="text-xs text-[#D8C9B4] font-light leading-relaxed mb-3 sm:mb-4">

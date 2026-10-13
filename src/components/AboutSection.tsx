@@ -26,21 +26,21 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
           className="w-full h-auto object-contain transform -translate-x-12"
         />
       </div>
-      
+
       {/* SECTION 1: ABOUT GLOW FLOW & FOUNDER PHILOSOPHY */}
       <div className="mb-14 sm:mb-20 relative z-10">
         <div className="flex items-center justify-center gap-2.5 sm:gap-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E8D58C] mb-3">
           <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
-          <span>Clinic Sanctuary & Philosophy</span>
+          <span>Clinic Philosophy</span>
           <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mt-5 sm:mt-6">
-          
+
           {/* Left Column: Signature Green & Gold Zen Emblem Frame (NO FACES) */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl bg-gradient-to-br from-[#14382A] via-[#0E2D21] to-[#081C14] p-6 sm:p-10 flex flex-col items-center justify-center text-center">
-              
+
               {/* Concentric Gold Rings Graphic inspired by PDF Cover */}
               <div className="relative w-36 h-36 sm:w-52 sm:h-52 rounded-full border border-[#D4AF37]/30 flex items-center justify-center mb-4 sm:mb-6">
                 <div className="w-28 h-28 sm:w-42 sm:h-42 rounded-full border border-[#D4AF37]/50 flex items-center justify-center">
@@ -116,7 +116,7 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8D58C] shrink-0 mt-0.5" />
                 <div>
                   <div className="text-xs font-semibold text-white uppercase tracking-wider">
-                    Bandra West Sanctuary
+                    Bandra West
                   </div>
                   <div className="text-[11px] text-[#D8C9B4] mt-0.5">
                     Private bespoke clinic suites
