@@ -35,39 +35,32 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
           <span className="w-6 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mt-5 sm:mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-5 sm:mt-6">
 
-          {/* Left Column: Signature Green & Gold Zen Emblem Frame (NO FACES) */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl bg-gradient-to-br from-[#14382A] via-[#0E2D21] to-[#081C14] p-6 sm:p-10 flex flex-col items-center justify-center text-center">
+          {/* Left Column: Signature Green & Gold Zen Emblem Frame */}
+          <div className="lg:col-span-5 flex">
+            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl bg-gradient-to-br from-[#14382A] via-[#0E2D21] to-[#081C14] p-6 sm:p-10 lg:p-12 flex flex-col items-center justify-between text-center min-h-[380px] sm:min-h-[460px] lg:min-h-[520px]">
 
-              {/* Concentric Gold Rings Graphic inspired by PDF Cover */}
-              <div className="relative w-36 h-36 sm:w-52 sm:h-52 rounded-full border border-[#D4AF37]/30 flex items-center justify-center mb-4 sm:mb-6">
-                <div className="w-28 h-28 sm:w-42 sm:h-42 rounded-full border border-[#D4AF37]/50 flex items-center justify-center">
-                  <div className="w-22 h-22 sm:w-32 sm:h-32 rounded-full border-2 border-[#E8D58C] bg-[#0A2018] flex flex-col items-center justify-center shadow-inner">
-                    <span className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#E8D58C] leading-none">
-                      GF
-                    </span>
-                    <span className="text-[8px] sm:text-[9px] uppercase tracking-widest text-[#D8C9B4] font-semibold mt-1">
-                      CLINIC
-                    </span>
-                  </div>
+              {/* Top empty spacer for vertical balance on desktop */}
+              <div className="hidden lg:block h-2" />
+
+              {/* Logo Emblem */}
+              <div className="w-full flex flex-col items-center justify-center my-auto">
+                <img
+                  src="/glowflow-logo-transparent.png"
+                  alt="GlowFlow"
+                  className="w-48 sm:w-60 lg:w-72 max-w-[280px] h-auto object-contain filter drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
+                />
+
+                <div className="text-white mt-4 sm:mt-6">
+                  <p className="text-xs sm:text-sm text-[#D8C9B4] font-light max-w-xs leading-relaxed mx-auto">
+                    Bandra West, Mumbai &bull; Non-invasive natural facelift and systemic fluid therapy
+                  </p>
                 </div>
-                {/* Floating gold orb */}
-                <div className="absolute top-2 right-4 sm:right-6 w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#E8D58C] shadow-[0_0_12px_#E8D58C]" />
-              </div>
-
-              <div className="text-white">
-                <h4 className="font-serif-luxury text-2xl sm:text-4xl leading-tight font-normal text-white">
-                  Glow Flow Studio
-                </h4>
-                <p className="text-xs text-[#D8C9B4] font-light mt-1.5 sm:mt-2 max-w-xs leading-relaxed">
-                  Bandra West, Mumbai &bull; Non-invasive natural facelift and systemic fluid therapy
-                </p>
               </div>
 
               {/* Verified Badge */}
-              <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[#D4AF37]/25 w-full flex items-center justify-around text-[11px] sm:text-xs text-[#E8D58C]">
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#D4AF37]/25 w-full flex items-center justify-around text-[11px] sm:text-xs text-[#E8D58C]">
                 <div className="flex items-center gap-1.5">
                   <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Clinical Standard</span>
