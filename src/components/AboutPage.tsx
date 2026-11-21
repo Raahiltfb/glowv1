@@ -1,4 +1,4 @@
-import { ShieldCheck, Award, MapPin, Phone, Mail } from 'lucide-react';
+import { ShieldCheck, Phone, Mail } from 'lucide-react';
 
 interface AboutPageProps {
   onOpenBooking: () => void;
@@ -74,37 +74,15 @@ export default function AboutPage({ onOpenBooking }: AboutPageProps) {
 
           {/* Left Column: Signature Green & Gold Zen Emblem Frame */}
           <div className="lg:col-span-5 flex">
-            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl bg-gradient-to-br from-[#14382A] via-[#0E2D21] to-[#081C14] p-6 sm:p-10 lg:p-12 flex flex-col items-center justify-between text-center min-h-[380px] sm:min-h-[460px] lg:min-h-[520px]">
-
-              {/* Top empty spacer for vertical balance on desktop */}
-              <div className="hidden lg:block h-2" />
+            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl bg-gradient-to-br from-[#14382A] via-[#0E2D21] to-[#081C14] p-6 sm:p-10 lg:p-12 flex flex-col items-center justify-center text-center min-h-[340px] sm:min-h-[420px] lg:min-h-[480px]">
 
               {/* Logo Emblem */}
               <div className="w-full flex flex-col items-center justify-center my-auto">
                 <img
                   src="/glowflow-logo-transparent.png"
                   alt="GlowFlow"
-                  className="w-48 sm:w-60 lg:w-72 max-w-[280px] h-auto object-contain filter drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
+                  className="w-52 sm:w-64 lg:w-80 max-w-[320px] h-auto object-contain filter drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
                 />
-
-                <div className="text-white mt-4 sm:mt-6">
-                  <p className="text-xs sm:text-sm text-[#D8C9B4] font-light max-w-xs leading-relaxed mx-auto">
-                    Bandra West, Mumbai &bull; Non-invasive natural facelift and systemic fluid therapy
-                  </p>
-                </div>
-              </div>
-
-              {/* Verified Badge */}
-              <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#D4AF37]/25 w-full flex items-center justify-around text-[11px] sm:text-xs text-[#E8D58C]">
-                <div className="flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span>Clinical Standard</span>
-                </div>
-                <div className="w-1 h-1 rounded-full bg-[#D4AF37]" />
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span>100% Non-Invasive</span>
-                </div>
               </div>
 
             </div>
@@ -127,8 +105,8 @@ export default function AboutPage({ onOpenBooking }: AboutPageProps) {
               Trained in osteopathic fascia release, Brazilian lymphatic drainage, and anatomical fluid mapping, our practitioners utilize a rhythmic, pump-driven methodology. We naturally sculpt jawlines, decongest orbital fluid, relieve whole-body bloating, and restore youthful elasticity without needles or invasive interventions.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-[#D4AF37]/25">
-              <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl emerald-card">
+            <div className="pt-3 sm:pt-4 border-t border-[#D4AF37]/25">
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl emerald-card max-w-md">
                 <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8D58C] shrink-0 mt-0.5" />
                 <div>
                   <div className="text-xs font-semibold text-white uppercase tracking-wider">
@@ -136,18 +114,6 @@ export default function AboutPage({ onOpenBooking }: AboutPageProps) {
                   </div>
                   <div className="text-[11px] text-[#D8C9B4] mt-0.5">
                     Anatomical rhythm & natural sculpting
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl emerald-card">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8D58C] shrink-0 mt-0.5" />
-                <div>
-                  <div className="text-xs font-semibold text-white uppercase tracking-wider">
-                    Bandra West
-                  </div>
-                  <div className="text-[11px] text-[#D8C9B4] mt-0.5">
-                    Private bespoke clinic suites
                   </div>
                 </div>
               </div>

@@ -9,7 +9,7 @@ export default function FooterBar() {
   };
 
   const getMapsUrl = () => {
-    return 'https://maps.google.com/?q=New+Clifton+RHS+Prof+Almeida+Road+Bandra+West+Mumbai';
+    return 'https://www.google.com/maps/search/?api=1&query=Glow+Flow+Facial+Workout+Studio+Bandra+West&query_place_id=ChIJZxnQ85zJ5zsR9QHEUZzTaMU';
   };
 
   return (
@@ -89,8 +89,8 @@ export default function FooterBar() {
               </h3>
 
               <div className="text-xs text-[#D8C9B4] font-light leading-relaxed mb-3 sm:mb-4">
-                <p className="font-semibold text-white mb-0.5">New Clifton RHS, B wing, Ground floor, flat 4</p>
-                <p>Prof Almeida Road, TPS -4, 1st Road, Bandra West, Pin - 400052</p>
+                <p className="font-semibold text-white mb-0.5">Clifton Society, B Wing Flat No-4, Ground Floor</p>
+                <p>Prof Almeida Road, 1st Rd, opposite Windmere Society, Bandra West, Mumbai, Maharashtra 400050</p>
               </div>
 
               <div className="flex items-center gap-2 text-xs text-[#D8C9B4]/80 bg-[#0A2018]/60 p-2.5 sm:p-3 rounded-lg border border-[#D4AF37]/20 mb-4 sm:mb-6">
