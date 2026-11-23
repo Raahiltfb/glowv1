@@ -54,11 +54,11 @@ export default function FooterBar() {
               </span>
 
               <h3 className="font-serif-luxury text-2xl sm:text-3xl text-white font-normal mb-1.5 sm:mb-2">
-                WhatsApp Direct
+                WhatsApp
               </h3>
 
               <p className="text-xs text-[#D8C9B4] font-light leading-relaxed mb-4 sm:mb-6">
-                Chat directly with our clinic coordinator to schedule your treatment session, select custom protocols, and confirm slots instantly.
+                Chat directly with us to schedule your treatment session, select custom protocols, and confirm slots instantly.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function FooterBar() {
               </span>
 
               <h3 className="font-serif-luxury text-2xl sm:text-3xl text-white font-normal mb-1.5 sm:mb-2">
-                Bandra West
+                GlowFlow Face Yoga Studio LLP
               </h3>
 
               <div className="text-xs text-[#D8C9B4] font-light leading-relaxed mb-3 sm:mb-4">

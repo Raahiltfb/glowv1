@@ -10,35 +10,43 @@ interface BookingModalProps {
 
 export default function BookingModal({
   isOpen,
-  initialTreatment = 'Instant Facelift',
+  initialTreatment,
   onClose,
 }: BookingModalProps) {
-  const [selectedTreatment, setSelectedTreatment] = useState(initialTreatment);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [preferredDate, setPreferredDate] = useState('');
-
-  useEffect(() => {
-    if (initialTreatment) {
-      setSelectedTreatment(initialTreatment);
-    }
-  }, [initialTreatment]);
-
-  if (!isOpen) return null;
-
   const allTreatmentNames = [
     ...offeringsList.map((s) => `${s.title} (${s.duration} ${s.durationUnit})`),
     'Face Yoga Consultation',
     'Custom Combination Session',
   ];
 
+  const resolveTreatmentName = (input?: string) => {
+    if (!input) return allTreatmentNames[0];
+    const match = allTreatmentNames.find(
+      (name) => name.toLowerCase().startsWith(input.toLowerCase()) || name.toLowerCase() === input.toLowerCase()
+    );
+    return match || input;
+  };
+
+  const [selectedTreatment, setSelectedTreatment] = useState(() => resolveTreatmentName(initialTreatment));
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [preferredDate, setPreferredDate] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      setSelectedTreatment(resolveTreatmentName(initialTreatment));
+    }
+  }, [isOpen, initialTreatment]);
+
+  if (!isOpen) return null;
+
   const handleWhatsAppBooking = () => {
     const text = encodeURIComponent(
       `Hello GlowFlow Clinic,\n\nI would like to book an appointment for *${selectedTreatment}*.\n` +
-        (name ? `Name: ${name}\n` : '') +
-        (phone ? `Phone: ${phone}\n` : '') +
-        (preferredDate ? `Preferred Date/Time: ${preferredDate}\n` : '') +
-        `Location: Bandra West, Mumbai`
+      (name ? `Name: ${name}\n` : '') +
+      (phone ? `Phone: ${phone}\n` : '') +
+      (preferredDate ? `Preferred Date/Time: ${preferredDate}\n` : '') +
+      `Location: Bandra West, Mumbai`
     );
     window.open(`https://wa.me/918104101177?text=${text}`, '_blank');
   };
@@ -62,14 +70,14 @@ export default function BookingModal({
         <div className="text-center mb-5 sm:mb-6 pr-6 pl-6">
           <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E8D58C] mb-1.5 sm:mb-2">
             <span className="w-5 sm:w-6 h-[1px] bg-[#D4AF37]/50" />
-            <span>GlowFlow Clinic Sanctuary</span>
+            <span>GlowFlow Clinic</span>
             <span className="w-5 sm:w-6 h-[1px] bg-[#D4AF37]/50" />
           </div>
           <h3 className="font-serif-luxury text-2xl sm:text-4xl text-white font-normal leading-tight">
             <span className="gold-gradient-text">Book Your Session</span>
           </h3>
           <p className="text-[#D8C9B4] text-[11px] sm:text-xs font-light mt-1">
-            Bandra West, Mumbai &bull; +91 81041 01177
+            +91 81041 01177
           </p>
         </div>
 
@@ -139,7 +147,7 @@ export default function BookingModal({
         {/* Location Note */}
         <div className="mt-4 sm:mt-6 p-2.5 sm:p-3 rounded-xl bg-[#081B13]/70 border border-[#D4AF37]/25 flex items-start gap-2 text-xs text-[#D8C9B4]">
           <MapPin className="w-4 h-4 text-[#E8D58C] shrink-0 mt-0.5" />
-          <span>Clinic: New Clifton RHS, Prof Almeida Road, Bandra West, Mumbai</span>
+          <span>Clifton Society, B Wing Flat No 4, Ground Floor, Prof Almeida Road, 1st Rd, opposite Windmere Society, Bandra West, Mumbai, Maharashtra 400050</span>
         </div>
 
         {/* Action Buttons */}
@@ -149,7 +157,7 @@ export default function BookingModal({
             className="w-full gold-btn text-xs tracking-widest uppercase font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:brightness-105"
           >
             <MessageCircle className="w-4 h-4 fill-[#0A2018]" />
-            <span>Confirm via WhatsApp Direct</span>
+            <span>Confirm via WhatsApp</span>
           </button>
 
           <a
