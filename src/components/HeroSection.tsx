@@ -24,6 +24,13 @@ export default function HeroSection({ onOpenBooking, onExploreTreatments }: Hero
       <div className="max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 relative z-10 flex flex-col items-start text-left font-commissioner">
         <div className="max-w-3xl pt-2 sm:pt-6 pb-6 sm:pb-10 w-full">
 
+          {/* GlowFlow Clinic Brand Title on Top */}
+          <div className="mb-5 sm:mb-7">
+            <span className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#E8D58C] filter drop-shadow-[0_4px_14px_rgba(0,0,0,0.45)]">
+              GlowFlow Clinic
+            </span>
+          </div>
+
           {/* Top Tagline */}
           <div className="text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E8D58C] mb-3 sm:mb-4 flex items-center gap-2">
             <span className="w-5 sm:w-7 h-[1px] bg-[#D4AF37]/60" />
@@ -41,14 +48,7 @@ export default function HeroSection({ onOpenBooking, onExploreTreatments }: Hero
             Release + Restore + Radiate
           </div>
 
-          <div className="w-16 sm:w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-4 sm:mb-5" />
-
-          {/* Details Bar with PDF Address - Kept strictly single-line without breaking viewport */}
-          <div className="w-full overflow-x-auto no-scrollbar mb-6 sm:mb-8">
-            <p className="text-[11px] sm:text-xs md:text-sm text-[#D8C9B4] font-light tracking-wide whitespace-nowrap inline-block">
-              New Clifton RHS, Bandra West, Mumbai &bull; 91 81041 01177 / 91 99305 09906
-            </p>
-          </div>
+          <div className="w-16 sm:w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-6 sm:mb-8" />
 
           {/* CTA Buttons - Full-width stacked on mobile, row on tablet/desktop */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">

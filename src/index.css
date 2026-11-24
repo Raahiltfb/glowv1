@@ -23,6 +23,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .gold-brand-gradient {
+    background: linear-gradient(180deg, #F0DB8A 0%, #E4C67A 35%, #B98A3A 70%, #9C6D29 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .gold-border {
     border-color: rgba(212, 175, 55, 0.35);
   }
